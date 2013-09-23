@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 PIS. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ScanViewController.h"
 
-@interface SecondViewController ()
+@interface ScanViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation ScanViewController
 
 - (void)viewDidLoad
 {

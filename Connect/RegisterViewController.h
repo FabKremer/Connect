@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  RegisterViewController.h
 //  Connect
 //
 //  Created by TopTier labs on 9/21/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface RegisterViewController : UIViewController
 
 @end

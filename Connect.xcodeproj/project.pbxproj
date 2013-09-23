@@ -17,13 +17,40 @@
 		9B2B162B17EE280D00C8B943 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B162A17EE280D00C8B943 /* Default@2x.png */; };
 		9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B162C17EE280D00C8B943 /* Default-568h@2x.png */; };
 		9B2B163017EE280D00C8B943 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B162E17EE280D00C8B943 /* MainStoryboard.storyboard */; };
-		9B2B163317EE280D00C8B943 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B163217EE280D00C8B943 /* FirstViewController.m */; };
-		9B2B163517EE280D00C8B943 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B163417EE280D00C8B943 /* first.png */; };
-		9B2B163717EE280D00C8B943 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B163617EE280D00C8B943 /* first@2x.png */; };
-		9B2B163A17EE280D00C8B943 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B163917EE280D00C8B943 /* SecondViewController.m */; };
-		9B2B163C17EE280D00C8B943 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B163B17EE280D00C8B943 /* second.png */; };
-		9B2B163E17EE280D00C8B943 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B163D17EE280D00C8B943 /* second@2x.png */; };
+		9B2B163317EE280D00C8B943 /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B163217EE280D00C8B943 /* ShareViewController.mm */; };
+		9B2B163A17EE280D00C8B943 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B163917EE280D00C8B943 /* ScanViewController.m */; };
+		9B2B164817EE29D500C8B943 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B164717EE29D500C8B943 /* LoginViewController.m */; };
+		9B2B165417EE2C0600C8B943 /* inicon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B165217EE2C0600C8B943 /* inicon.jpeg */; };
+		9B2B165517EE2C0600C8B943 /* fbicon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B165317EE2C0600C8B943 /* fbicon.jpeg */; };
+		9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */; };
+		9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */; };
+		9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */; };
+		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BA1A15B17EFCEF30071F73C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9672D35713BD662F0002B0E2;
+			remoteInfo = qrencoder;
+		};
+		9BA1A15D17EFCEF30071F73C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9621844115431DBA00447877;
+			remoteInfo = QRCodeEncoderDemo;
+		};
+		9BA1A15F17EFCF270071F73C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9672D35613BD662F0002B0E2;
+			remoteInfo = qrencoder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9B2B161317EE280D00C8B943 /* Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,14 +67,20 @@
 		9B2B162A17EE280D00C8B943 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9B2B162C17EE280D00C8B943 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9B2B162F17EE280D00C8B943 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9B2B163117EE280D00C8B943 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9B2B163217EE280D00C8B943 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9B2B163417EE280D00C8B943 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		9B2B163617EE280D00C8B943 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		9B2B163817EE280D00C8B943 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9B2B163917EE280D00C8B943 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		9B2B163B17EE280D00C8B943 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		9B2B163D17EE280D00C8B943 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		9B2B163117EE280D00C8B943 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		9B2B163217EE280D00C8B943 /* ShareViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ShareViewController.mm; sourceTree = "<group>"; };
+		9B2B163817EE280D00C8B943 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		9B2B163917EE280D00C8B943 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		9B2B164617EE29D500C8B943 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9B2B164717EE29D500C8B943 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9B2B165217EE2C0600C8B943 /* inicon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = inicon.jpeg; sourceTree = "<group>"; };
+		9B2B165317EE2C0600C8B943 /* fbicon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbicon.jpeg; sourceTree = "<group>"; };
+		9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QRCodeEncoderObjectiveCAtGithub.xcodeproj; path = "src/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */,
+				9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */,
 				9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */,
 				9B2B161917EE280D00C8B943 /* Foundation.framework in Frameworks */,
 				9B2B161B17EE280D00C8B943 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +102,7 @@
 		9B2B160A17EE280D00C8B943 = {
 			isa = PBXGroup;
 			children = (
+				9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */,
 				9B2B161C17EE280D00C8B943 /* Connect */,
 				9B2B161517EE280D00C8B943 /* Frameworks */,
 				9B2B161417EE280D00C8B943 /* Products */,
@@ -84,6 +120,7 @@
 		9B2B161517EE280D00C8B943 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */,
 				9B2B161617EE280D00C8B943 /* UIKit.framework */,
 				9B2B161817EE280D00C8B943 /* Foundation.framework */,
 				9B2B161A17EE280D00C8B943 /* CoreGraphics.framework */,
@@ -94,17 +131,20 @@
 		9B2B161C17EE280D00C8B943 /* Connect */ = {
 			isa = PBXGroup;
 			children = (
+				9B2B164417EE293000C8B943 /* Resoruce */,
 				9B2B162517EE280D00C8B943 /* AppDelegate.h */,
 				9B2B162617EE280D00C8B943 /* AppDelegate.m */,
 				9B2B162E17EE280D00C8B943 /* MainStoryboard.storyboard */,
-				9B2B163117EE280D00C8B943 /* FirstViewController.h */,
-				9B2B163217EE280D00C8B943 /* FirstViewController.m */,
-				9B2B163417EE280D00C8B943 /* first.png */,
-				9B2B163617EE280D00C8B943 /* first@2x.png */,
-				9B2B163817EE280D00C8B943 /* SecondViewController.h */,
-				9B2B163917EE280D00C8B943 /* SecondViewController.m */,
-				9B2B163B17EE280D00C8B943 /* second.png */,
-				9B2B163D17EE280D00C8B943 /* second@2x.png */,
+				9B2B163117EE280D00C8B943 /* ShareViewController.h */,
+				9B2B163217EE280D00C8B943 /* ShareViewController.mm */,
+				9B2B163817EE280D00C8B943 /* ScanViewController.h */,
+				9B2B163917EE280D00C8B943 /* ScanViewController.m */,
+				9B2B164617EE29D500C8B943 /* LoginViewController.h */,
+				9B2B164717EE29D500C8B943 /* LoginViewController.m */,
+				9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */,
+				9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */,
+				9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */,
+				9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */,
 				9B2B161D17EE280D00C8B943 /* Supporting Files */,
 			);
 			path = Connect;
@@ -124,6 +164,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9B2B164417EE293000C8B943 /* Resoruce */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B164517EE293900C8B943 /* Images */,
+			);
+			name = Resoruce;
+			sourceTree = "<group>";
+		};
+		9B2B164517EE293900C8B943 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B165217EE2C0600C8B943 /* inicon.jpeg */,
+				9B2B165317EE2C0600C8B943 /* fbicon.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		9BA1A15717EFCEF30071F73C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BA1A15C17EFCEF30071F73C /* libqrencoder.a */,
+				9BA1A15E17EFCEF30071F73C /* QRCodeEncoderDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +204,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9BA1A16017EFCF270071F73C /* PBXTargetDependency */,
 			);
 			name = Connect;
 			productName = Connect;
@@ -163,12 +230,35 @@
 			mainGroup = 9B2B160A17EE280D00C8B943;
 			productRefGroup = 9B2B161417EE280D00C8B943 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9BA1A15717EFCEF30071F73C /* Products */;
+					ProjectRef = 9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9B2B161217EE280D00C8B943 /* Connect */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9BA1A15C17EFCEF30071F73C /* libqrencoder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libqrencoder.a;
+			remoteRef = 9BA1A15B17EFCEF30071F73C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9BA1A15E17EFCEF30071F73C /* QRCodeEncoderDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QRCodeEncoderDemo.app;
+			remoteRef = 9BA1A15D17EFCEF30071F73C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9B2B161117EE280D00C8B943 /* Resources */ = {
@@ -180,10 +270,8 @@
 				9B2B162B17EE280D00C8B943 /* Default@2x.png in Resources */,
 				9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */,
 				9B2B163017EE280D00C8B943 /* MainStoryboard.storyboard in Resources */,
-				9B2B163517EE280D00C8B943 /* first.png in Resources */,
-				9B2B163717EE280D00C8B943 /* first@2x.png in Resources */,
-				9B2B163C17EE280D00C8B943 /* second.png in Resources */,
-				9B2B163E17EE280D00C8B943 /* second@2x.png in Resources */,
+				9B2B165417EE2C0600C8B943 /* inicon.jpeg in Resources */,
+				9B2B165517EE2C0600C8B943 /* fbicon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,12 +284,23 @@
 			files = (
 				9B2B162317EE280D00C8B943 /* main.m in Sources */,
 				9B2B162717EE280D00C8B943 /* AppDelegate.m in Sources */,
-				9B2B163317EE280D00C8B943 /* FirstViewController.m in Sources */,
-				9B2B163A17EE280D00C8B943 /* SecondViewController.m in Sources */,
+				9B2B163317EE280D00C8B943 /* ShareViewController.mm in Sources */,
+				9B2B163A17EE280D00C8B943 /* ScanViewController.m in Sources */,
+				9B2B164817EE29D500C8B943 /* LoginViewController.m in Sources */,
+				9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */,
+				9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BA1A16017EFCF270071F73C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = qrencoder;
+			targetProxy = 9BA1A15F17EFCF270071F73C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B2B161F17EE280D00C8B943 /* InfoPlist.strings */ = {
@@ -248,8 +347,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/src/QR-Code-Encoder-for-Objective-C";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -272,8 +376,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/src/QR-Code-Encoder-for-Objective-C";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -320,6 +429,7 @@
 				9B2B164317EE280D00C8B943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
