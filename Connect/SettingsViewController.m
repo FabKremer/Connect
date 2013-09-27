@@ -98,6 +98,14 @@
     return cell;
 }
 
+-(void)switchFBChanged:(id)sender{
+    
+}
+
+-(void)switchINChanged:(id)sender{
+    
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
