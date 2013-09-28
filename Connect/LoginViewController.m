@@ -42,8 +42,12 @@
     btnWrong.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
     [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
     [btnLogin setEnabled:NO];
+    [wrongView setHidden:YES];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [wrongView setHidden:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -83,10 +87,6 @@
 
 -(IBAction)login:(id)sender{
     
-    mail=txtMail.text;
-    password=txtPassword.text;
-
-    
     NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
                           mail,@"Email",
                           password, @"Password",
@@ -119,8 +119,20 @@
     //comparo segun lo que me dio el status code para ver como sigo
     if ((long)urlResponse.statusCode == 200)
         [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
+    else{
+        txtPassword.text=@"";
+        password=nil;
+        [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
+        [btnLogin setEnabled:NO];
+        [wrongView setHidden:NO];
+    }
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    [wrongView setHidden:YES];
+    
+    return YES;
+}
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];//Dismiss the keyboard.

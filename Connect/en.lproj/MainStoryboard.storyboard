@@ -214,14 +214,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not a member yet?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2t-7j-9NE">
-                                <rect key="frame" x="46" y="446" width="151" height="21"/>
+                                <rect key="frame" x="46" y="445.99999999999994" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jDe-Rm-m3x">
-                                <rect key="frame" x="181" y="435" width="104" height="44"/>
+                                <rect key="frame" x="181" y="434.99999999999994" width="104" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
@@ -240,8 +240,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" id="C6X-9j-Gyq">
-                                <rect key="frame" x="7" y="134" width="300" height="32"/>
+                            <view hidden="YES" contentMode="scaleToFill" id="C6X-9j-Gyq">
+                                <rect key="frame" x="7" y="127" width="300" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid Mail and/or Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mar-VB-wCD">
