@@ -15,7 +15,7 @@
 
 @implementation RegisterViewController
 
-@synthesize txtName,txtSurname,txtMail,txtPassword,txtPassword2,table,btnRegister;
+@synthesize txtName,txtMail,txtPassword,txtPassword2,table,btnRegister;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,26 +34,23 @@
     table.dataSource=self;
     
     txtName.tag=1;
-    txtMail.delegate=self;
+    txtName.delegate=self;
     
-    txtSurname.tag=2;
-    txtMail.delegate=self;
-    
-    txtMail.tag=3;
+    txtMail.tag=2;
     txtMail.delegate=self;
     
     txtPassword.secureTextEntry = YES;
-    txtPassword.tag=4;
+    txtPassword.tag=3;
     txtPassword.delegate=self;
     
     txtPassword2.secureTextEntry = YES;
-    txtPassword2.tag=5;
+    txtPassword2.tag=4;
     txtPassword2.delegate=self;
     
     btnRegister.clipsToBounds = YES;
     btnRegister.layer.cornerRadius = 15.0f;
     btnRegister.clipsToBounds = YES;
-    [btnRegister setBackgroundColor:[UIColor colorWithRed:16.0/255.0f green:147.0/255.0f blue:220.0/255.0f alpha:1]];
+    [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
     [btnRegister setEnabled:NO];
 }
 
@@ -68,16 +65,16 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section == 0)
-        return 2;
+    if (section == 0 || section== 1)
+        return 1;
     else
-        return 3;
+        return 2;
 }
 
 
@@ -90,9 +87,64 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     
-    
-    
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionName;
+    switch (section)
+    {
+        case 0:
+            sectionName=NSLocalizedString(@"Full Name", nil);
+            break;
+        case 1:
+            sectionName=@"Mail";
+            break;
+        default:
+            sectionName = NSLocalizedString(@"Password", nil);
+            break;
+    }
+    return sectionName;
+}
+
+-(IBAction)cancel:(id)sender{
+    UINavigationController * navigationController = self.navigationController;
+    [navigationController popToRootViewControllerAnimated:YES];
+
+}
+
+-(IBAction)registration:(id)sender{
+    
+}
+
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];//Dismiss the keyboard.
+    //
+    
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    if (textField.tag==1)//name
+        name=textField.text;
+    else if (textField.tag==2)//mail
+        mail=textField.text;
+    else if (textField.tag==3)//pass1
+        password=textField.text;
+    else if (textField.tag==4)//pass2
+        password2=textField.text;
+    
+    if (name!=nil && mail!=nil && password!=nil && password2!=nil && ![name isEqualToString:@""] && ![mail isEqualToString:@""] &&![password isEqualToString:@""] &&![password2 isEqualToString:@""] ){
+        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:1]];
+        [btnRegister setEnabled:YES];
+    }else{
+        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
+        [btnRegister setEnabled:NO];
+    }
+    
 }
 
 

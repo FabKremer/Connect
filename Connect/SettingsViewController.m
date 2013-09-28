@@ -119,10 +119,10 @@
     switch (section)
     {
         case 0:
-            sectionName=@"Basic Information";
+            sectionName=NSLocalizedString(@"Basic Information", nil);
             break;
         default:
-            sectionName = @"Set What To Share";
+            sectionName = NSLocalizedString(@"Set What To Share", nil); 
             break;
     }
     return sectionName;

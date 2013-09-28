@@ -15,7 +15,7 @@
 
 @implementation LoginViewController
 
-@synthesize txtMail,txtPassword,btnLogin,table,btnRegister;
+@synthesize txtMail,txtPassword,btnLogin,table,btnRegister,btnWrong,wrongView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,8 +39,8 @@
     txtPassword.tag=2;
     txtMail.tag=1;
     txtMail.delegate=self;
-    
-    [btnLogin setBackgroundColor:[UIColor colorWithRed:16.0/255.0f green:147.0/255.0f blue:220.0/255.0f alpha:1]];
+    btnWrong.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
+    [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
     [btnLogin setEnabled:NO];
 }
 
@@ -106,10 +106,10 @@
     }
 
     if (theOtherText!=nil && ![theOtherText isEqualToString:@""] && textField!=nil && ![textField.text isEqualToString:@""]){
-        [btnLogin setBackgroundColor:[UIColor colorWithRed:15.0/255.0f green:140.0/255.0f blue:209.0/255.0f alpha:1]];
+        [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:1]];
         [btnLogin setEnabled:YES];
     }else{
-        [btnLogin setBackgroundColor:[UIColor colorWithRed:16.0/255.0f green:147.0/255.0f blue:220.0/255.0f alpha:1]];
+        [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
         [btnLogin setEnabled:NO];
     }
 
