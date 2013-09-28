@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0C4D2417F6874000BF3EDD /* qricon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C4D2317F6874000BF3EDD /* qricon.jpeg */; };
+		9B0C4D2617F68DD000BF3EDD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0C4D2517F68DD000BF3EDD /* Security.framework */; };
 		9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161617EE280D00C8B943 /* UIKit.framework */; };
 		9B2B161917EE280D00C8B943 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161817EE280D00C8B943 /* Foundation.framework */; };
 		9B2B161B17EE280D00C8B943 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161A17EE280D00C8B943 /* CoreGraphics.framework */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B0C4D2317F6874000BF3EDD /* qricon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qricon.jpeg; sourceTree = "<group>"; };
+		9B0C4D2517F68DD000BF3EDD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9B2B161317EE280D00C8B943 /* Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2B161617EE280D00C8B943 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9B2B161817EE280D00C8B943 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B0C4D2617F68DD000BF3EDD /* Security.framework in Frameworks */,
 				9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */,
 				9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */,
 				9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */,
@@ -120,6 +125,7 @@
 		9B2B161517EE280D00C8B943 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B0C4D2517F68DD000BF3EDD /* Security.framework */,
 				9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */,
 				9B2B161617EE280D00C8B943 /* UIKit.framework */,
 				9B2B161817EE280D00C8B943 /* Foundation.framework */,
@@ -175,6 +181,7 @@
 		9B2B164517EE293900C8B943 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9B0C4D2317F6874000BF3EDD /* qricon.jpeg */,
 				9B2B165217EE2C0600C8B943 /* inicon.jpeg */,
 				9B2B165317EE2C0600C8B943 /* fbicon.jpeg */,
 			);
@@ -268,6 +275,7 @@
 				9B2B162117EE280D00C8B943 /* InfoPlist.strings in Resources */,
 				9B2B162917EE280D00C8B943 /* Default.png in Resources */,
 				9B2B162B17EE280D00C8B943 /* Default@2x.png in Resources */,
+				9B0C4D2417F6874000BF3EDD /* qricon.jpeg in Resources */,
 				9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */,
 				9B2B163017EE280D00C8B943 /* MainStoryboard.storyboard in Resources */,
 				9B2B165417EE2C0600C8B943 /* inicon.jpeg in Resources */,
@@ -334,7 +342,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fabian Kremer (63F2AZR7H6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
