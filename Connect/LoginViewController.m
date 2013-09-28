@@ -82,7 +82,43 @@
 }
 
 -(IBAction)login:(id)sender{
-    [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
+    
+    mail=txtMail.text;
+    password=txtPassword.text;
+
+    
+    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                          mail,@"Email",
+                          password, @"Password",
+                          nil];
+    
+    // POST
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:[NSURL URLWithString:@"http://connectwp.azurewebsites.net/api/login/"]];
+    
+    NSError *error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:postData];
+    
+    //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // imprimo lo que mando para verificar
+    NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    error = [[NSError alloc] init];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    // imprimo el resultado del post para verificar
+    NSLog(@"Response: %@", result);
+    NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+    
+    //comparo segun lo que me dio el status code para ver como sigo
+    if ((long)urlResponse.statusCode == 200)
+        [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
 }
 
 
@@ -112,7 +148,6 @@
         [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
         [btnLogin setEnabled:NO];
     }
-
 }
 
 
