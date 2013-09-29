@@ -116,6 +116,62 @@
 
 -(IBAction)registration:(id)sender{
     
+    
+    password = txtPassword.text;
+    password2 = txtPassword2.text;
+    
+    if ([password isEqualToString:password2]) {
+    
+        name = txtName.text;
+        mail = txtMail.text;
+        NSString * f = @"";
+        NSString * l = @"";
+    
+        NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                              name,@"Name",
+                              mail,@"Email",
+                              f,@"FacebookId",
+                              l,@"LinkedInId",
+                              password, @"Password",
+                              nil];
+        
+        // POST
+        NSMutableURLRequest *request = [NSMutableURLRequest
+                                        requestWithURL:[NSURL URLWithString:@"http://connectwp.azurewebsites.net/api/signup/"]];
+        
+        NSError *error;
+        NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:postData];
+        
+        // imprimo lo que mando para verificar
+        NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+        
+        NSHTTPURLResponse* urlResponse = nil;
+        error = [[NSError alloc] init];
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        
+        // imprimo el resultado del post para verificar
+        NSLog(@"Response: %@", result);
+        NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+        
+        //comparo segun lo que me dio el status code para ver como sigo
+        if ((long)urlResponse.statusCode == 200){
+            // paso de pantalla
+            [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+        }
+        else{
+            //error 410
+            //el usuario ya existe
+        }
+        
+    }
+    else{
+        //las contrasenas no son igules
+    }
+    
 }
 
 

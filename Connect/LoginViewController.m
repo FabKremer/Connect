@@ -87,6 +87,9 @@
 
 -(IBAction)login:(id)sender{
     
+    mail = txtMail.text;
+    password = txtPassword.text;
+    
     NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
                           mail,@"Email",
                           password, @"Password",

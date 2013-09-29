@@ -330,7 +330,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="t1D-xa-ceg" eventType="touchUpInside" id="6kS-ML-Ycd"/>
+                                    <action selector="registration:" destination="ZwF-Vy-p1H" eventType="touchUpInside" id="c6l-is-i8m"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" id="aBr-lt-1fo">
@@ -393,7 +393,7 @@
                         <outlet property="txtName" destination="aBr-lt-1fo" id="0LB-iT-lA1"/>
                         <outlet property="txtPassword" destination="HgW-05-TfI" id="8NG-XI-g8T"/>
                         <outlet property="txtPassword2" destination="Yt9-Qs-uNv" id="mzu-d9-6hP"/>
-                        <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="BPD-BN-jYw"/>
+                        <segue destination="ujh-7n-G7i" kind="modal" identifier="shareSegueFR" id="BPD-BN-jYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSr-ua-Lb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,6 +407,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZN-CF-NqG"/>
+        <segue reference="BPD-BN-jYw"/>
     </inferredMetricsTieBreakers>
 </document>
