@@ -214,14 +214,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No eres miembro aun?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2t-7j-9NE">
-                                <rect key="frame" x="28" y="446" width="175" height="21"/>
+                                <rect key="frame" x="28" y="445.99999999999994" width="175" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jDe-Rm-m3x">
-                                <rect key="frame" x="199" y="435" width="104" height="44"/>
+                                <rect key="frame" x="199" y="434.99999999999994" width="104" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Registrarse">
@@ -235,11 +235,6 @@
                                     <action selector="registration:" destination="t1D-xa-ceg" eventType="touchUpInside" id="9kp-kZ-yqf"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="GUT-fV-1wO">
-                                <rect key="frame" x="142" y="370" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                            </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" id="Kit-Fw-Nz2">
                                 <rect key="frame" x="7" y="127" width="300" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -294,7 +289,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="K4T-pW-sQQ">
-                                <rect key="frame" x="0.0" y="51" width="320" height="390"/>
+                                <rect key="frame" x="0.0" y="78" width="320" height="363"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
@@ -318,7 +313,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TlP-cJ-2sh">
-                                <rect key="frame" x="13" y="460" width="294" height="44"/>
+                                <rect key="frame" x="13" y="489" width="294" height="44"/>
                                 <color key="backgroundColor" red="0.058732008709999999" green="0.54750590229999996" blue="0.82126913270000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,33 +325,56 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="t1D-xa-ceg" eventType="touchUpInside" id="6kS-ML-Ycd"/>
+                                    <action selector="registration:" destination="ZwF-Vy-p1H" eventType="touchUpInside" id="V9H-F0-zrA"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" minimumFontSize="17" id="aBr-lt-1fo">
-                                <rect key="frame" x="20" y="132" width="287" height="30"/>
+                                <rect key="frame" x="20" y="159" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" minimumFontSize="17" id="HgW-05-TfI">
-                                <rect key="frame" x="20" y="318" width="287" height="30"/>
+                                <rect key="frame" x="20" y="346" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-escriba la Contraseña" minimumFontSize="17" id="Yt9-Qs-uNv">
-                                <rect key="frame" x="20" y="359" width="287" height="30"/>
+                                <rect key="frame" x="20" y="387" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mail" minimumFontSize="17" id="wZ0-DR-3m7">
-                                <rect key="frame" x="20" y="224" width="287" height="30"/>
+                                <rect key="frame" x="20" y="252" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view hidden="YES" contentMode="scaleToFill" id="GCy-cP-wil">
+                                <rect key="frame" x="7" y="85" width="300" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail Already Exists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5fU-Wb-xNn">
+                                        <rect key="frame" x="65" y="5" width="211" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="5oJ-A2-tEd">
+                                        <rect key="frame" x="35" y="5" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" id="NgY-qT-TLf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -388,11 +406,14 @@
                     <navigationItem key="navigationItem" id="M4l-iE-gOT"/>
                     <connections>
                         <outlet property="btnRegister" destination="TlP-cJ-2sh" id="tyh-8v-dcv"/>
+                        <outlet property="btnWrong" destination="5oJ-A2-tEd" id="qCI-zp-Myc"/>
                         <outlet property="table" destination="K4T-pW-sQQ" id="ftt-NW-uCP"/>
                         <outlet property="txtMail" destination="wZ0-DR-3m7" id="XaI-aS-QCl"/>
                         <outlet property="txtName" destination="aBr-lt-1fo" id="0LB-iT-lA1"/>
                         <outlet property="txtPassword" destination="HgW-05-TfI" id="8NG-XI-g8T"/>
                         <outlet property="txtPassword2" destination="Yt9-Qs-uNv" id="mzu-d9-6hP"/>
+                        <outlet property="txtWrong" destination="5fU-Wb-xNn" id="MhJ-Cp-ggC"/>
+                        <outlet property="wrongView" destination="GCy-cP-wil" id="tS4-te-HKP"/>
                         <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="BPD-BN-jYw"/>
                         <segue destination="t1D-xa-ceg" kind="modal" identifier="cancelSegue" modalTransitionStyle="coverVertical" id="mJB-57-TxT"/>
                     </connections>
@@ -408,7 +429,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mJB-57-TxT"/>
         <segue reference="TZN-CF-NqG"/>
+        <segue reference="mJB-57-TxT"/>
     </inferredMetricsTieBreakers>
 </document>

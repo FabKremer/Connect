@@ -10,3 +10,6 @@
 "Password" = "Contraseña";
 "Basic Information" = "Información Basica";
 "Set What To Share" = "Elige Que Quieres Compartir";
+"Mail already taken" = "Mail ya registrado";
+"Passwords doesn't match" = "Las contraseñas no coinciden";
+"Invalid Mail" = "Mail Invalido";

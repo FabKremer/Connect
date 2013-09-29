@@ -10,6 +10,10 @@
 
 @interface RegisterViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate,UITableViewDataSource>
 {
+    IBOutlet UIView *wrongView;
+    IBOutlet UIButton *btnWrong;
+    IBOutlet UILabel *txtWrong;
+
     IBOutlet UIButton *btnRegister;
     IBOutlet UIButton *btncancel;
 
@@ -25,8 +29,11 @@
     NSString *password2;
     
 }
+@property(nonatomic,retain) UIView *wrongView;
+@property(nonatomic,retain) UILabel *txtWrong;
 
 @property(nonatomic,retain) UIButton *btnRegister;
+@property(nonatomic,retain) UIButton *btnWrong;
 
 @property(nonatomic,retain) UITextField *txtName;
 @property(nonatomic,retain) UITextField *txtMail;

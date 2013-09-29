@@ -10,3 +10,6 @@
 "Password" = "Password";
 "Basic Information" = "Basic Information";
 "Set What To Share" = "Set What To Share";
+"Mail already taken" = "Mail already taken";
+"Passwords doesn't match" = "Passwords doesn't match";
+"Invalid Mail" = "Invalid Mail";
