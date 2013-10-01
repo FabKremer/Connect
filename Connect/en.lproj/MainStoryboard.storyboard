@@ -261,6 +261,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="GNI-GV-SNl">
+                                <rect key="frame" x="142" y="377" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -271,6 +276,7 @@
                         <outlet property="btnLogin" destination="ajh-PD-jbS" id="Gtq-e5-6wJ"/>
                         <outlet property="btnRegister" destination="jDe-Rm-m3x" id="4Sb-Yn-fzd"/>
                         <outlet property="btnWrong" destination="1Ce-Hm-8DK" id="osa-oh-Xg5"/>
+                        <outlet property="spinner" destination="GNI-GV-SNl" id="t6c-pt-hZ4"/>
                         <outlet property="table" destination="CO9-kF-Vk1" id="jwc-iF-sIx"/>
                         <outlet property="txtMail" destination="ix3-82-S24" id="t7p-G0-deq"/>
                         <outlet property="txtPassword" destination="OGv-J6-NXc" id="4rC-QR-qJb"/>
@@ -402,6 +408,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="F5q-A1-OSu">
+                                <rect key="frame" x="142" y="438" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -409,6 +420,7 @@
                     <connections>
                         <outlet property="btnRegister" destination="TlP-cJ-2sh" id="tyh-8v-dcv"/>
                         <outlet property="btnWrong" destination="RbQ-C2-pbe" id="3ld-ga-rzp"/>
+                        <outlet property="spinner" destination="F5q-A1-OSu" id="nFt-0h-7la"/>
                         <outlet property="table" destination="K4T-pW-sQQ" id="ftt-NW-uCP"/>
                         <outlet property="txtMail" destination="wZ0-DR-3m7" id="XaI-aS-QCl"/>
                         <outlet property="txtName" destination="aBr-lt-1fo" id="0LB-iT-lA1"/>
@@ -430,6 +442,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZN-CF-NqG"/>
+        <segue reference="BPD-BN-jYw"/>
     </inferredMetricsTieBreakers>
 </document>

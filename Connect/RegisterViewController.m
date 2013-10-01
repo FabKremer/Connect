@@ -15,7 +15,7 @@
 
 @implementation RegisterViewController
 
-@synthesize txtName,txtMail,txtPassword,txtPassword2,table,btnRegister,btnWrong,wrongView,txtWrong;
+@synthesize txtName,txtMail,txtPassword,txtPassword2,table,btnRegister,btnWrong,wrongView,txtWrong,spinner;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +55,7 @@
     btnWrong.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
 
     [wrongView setHidden:YES];
+    [spinner setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,7 +119,14 @@
 }
 
 -(IBAction)registration:(id)sender{
+    [spinner setHidden:NO];
+    [spinner startAnimating];
+    [self performSelectorInBackground:@selector(processRegistration) withObject:self];
+
     
+}
+
+-(void)processRegistration{
     password = txtPassword.text;
     password2 = txtPassword2.text;
     
@@ -128,17 +136,17 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
     
     NSTextCheckingResult *match = [regex firstMatchInString:mail options:0 range:NSMakeRange(0, [mail length])];
-
+    
     if (match){
         //Matches
-
-        if ([password isEqualToString:password2]) {
         
+        if ([password isEqualToString:password2]) {
+            
             name = txtName.text;
             mail = txtMail.text;
             NSString * f = @"";
             NSString * l = @"";
-        
+            
             NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
                                   name,@"Name",
                                   mail,@"Email",
@@ -198,7 +206,7 @@
             [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
             [btnRegister setEnabled:NO];
             txtWrong.text=NSLocalizedString(@"Passwords doesn't match", nil);
-
+            
         }
     }
     else{
@@ -212,6 +220,8 @@
         txtWrong.text=NSLocalizedString(@"Invalid Mail", nil);
     }
     
+    [spinner stopAnimating];
+    [spinner setHidden:YES];
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
