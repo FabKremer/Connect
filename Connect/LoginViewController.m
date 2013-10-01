@@ -16,7 +16,7 @@
 
 @implementation LoginViewController
 
-@synthesize txtMail,txtPassword,btnLogin,table,btnRegister,btnWrong,wrongView;
+@synthesize txtMail,txtPassword,btnLogin,table,btnRegister,btnWrong,wrongView,spinner;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +44,7 @@
     [btnLogin setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
     [btnLogin setEnabled:NO];
     [wrongView setHidden:YES];
+    [spinner setHidden:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -87,7 +88,13 @@
 }
 
 -(IBAction)login:(id)sender{
-    
+    [spinner setHidden:NO];
+    [spinner startAnimating];
+    [self performSelectorInBackground:@selector(processLogin) withObject:self];
+
+}
+
+-(void)processLogin{
     mail = txtMail.text;
     password = txtPassword.text;
     
@@ -105,6 +112,8 @@
         [btnLogin setEnabled:NO];
         [wrongView setHidden:NO];
     }
+    [spinner stopAnimating];
+    [spinner setHidden:YES];
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{

@@ -13,7 +13,7 @@
     IBOutlet UIView *wrongView;
     IBOutlet UIButton *btnLogin;
     IBOutlet UIButton *btnWrong;
-
+    IBOutlet UIActivityIndicatorView *spinner;
     IBOutlet UIButton *btnRegister;
 
     IBOutlet UITextField *txtMail;
@@ -29,6 +29,7 @@
 @property(nonatomic,retain) UIButton *btnLogin;
 @property(nonatomic,retain) UIButton *btnRegister;
 @property(nonatomic,retain) UIButton *btnWrong;
+@property(nonatomic,retain) UIActivityIndicatorView *spinner;
 
 @property(nonatomic,retain) UITextField *txtMail;
 @property(nonatomic,retain) UITextField *txtPassword;
