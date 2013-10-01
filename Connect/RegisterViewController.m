@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "BackendProxy.h"
 
 @interface RegisterViewController ()
 
@@ -131,46 +132,20 @@
 
     if (match){
         //Matches
-
         if ([password isEqualToString:password2]) {
-        
+            
             name = txtName.text;
             mail = txtMail.text;
-            NSString * f = @"";
-            NSString * l = @"";
-        
-            NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  name,@"Name",
-                                  mail,@"Email",
-                                  f,@"FacebookId",
-                                  l,@"LinkedInId",
-                                  password, @"Password",
-                                  nil];
+            password = txtPassword.text;
             
-            // POST
-            NSMutableURLRequest *request = [NSMutableURLRequest
-                                            requestWithURL:[NSURL URLWithString:@"http://connectwp.azurewebsites.net/api/signup/"]];
+            NSString *facebook = @"";
+            NSString *linkedin = @"";
             
-            NSError *error;
-            NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
-            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            [request setHTTPMethod:@"POST"];
-            [request setHTTPBody:postData];
+            //llamo a la funcion de la clase BackendProxy
+            serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
             
-            // imprimo lo que mando para verificar
-            NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
-            
-            NSHTTPURLResponse* urlResponse = nil;
-            error = [[NSError alloc] init];
-            NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-            NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-            
-            // imprimo el resultado del post para verificar
-            NSLog(@"Response: %@", result);
-            NSLog(@"Response: %ld", (long)urlResponse.statusCode);
-            
-            //comparo segun lo que me dio el status code para ver como sigo
-            if ((long)urlResponse.statusCode == 200){
+            //comparo segun lo que me dio la funcion enterUser para ver como sigo
+            if ([sr getCodigo] == 200){
                 // paso de pantalla
                 [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
             }
