@@ -42,7 +42,9 @@
     
     sr = [BackendProxy login :mail :password];
     
-    XCTAssertTrue(1 ==1, @"");
+    NSLog(@"primer test");
+    //XCTAssertEqual([sr getNumId], @"1", @"No conncide el id");
+    XCTAssertTrue((1 == 2), @"");
 }
 
 @end

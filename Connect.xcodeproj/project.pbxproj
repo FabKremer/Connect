@@ -37,10 +37,8 @@
 		EFB2F35017FA2B470089DF48 /* Connect_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB2F34F17FA2B470089DF48 /* Connect_Tests.m */; };
 		EFB2F35D17FA53450089DF48 /* BackendProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB2F35C17FA53450089DF48 /* BackendProxy.m */; };
 		EFF87F1E17FB1E1E00697803 /* serverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF87F1D17FB1E1E00697803 /* serverResponse.m */; };
-		EFF87F2117FB495900697803 /* BackendProxy.h in Sources */ = {isa = PBXBuildFile; fileRef = EFB2F35B17FA53450089DF48 /* BackendProxy.h */; };
-		EFF87F2217FB495900697803 /* BackendProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB2F35C17FA53450089DF48 /* BackendProxy.m */; };
-		EFF87F2317FB495900697803 /* serverResponse.h in Sources */ = {isa = PBXBuildFile; fileRef = EFF87F1C17FB1E1E00697803 /* serverResponse.h */; };
-		EFF87F2417FB495900697803 /* serverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF87F1D17FB1E1E00697803 /* serverResponse.m */; };
+		EFF87F2C17FB4F4500697803 /* BackendProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB2F35C17FA53450089DF48 /* BackendProxy.m */; };
+		EFF87F2E17FB4F4500697803 /* serverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF87F1D17FB1E1E00697803 /* serverResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,10 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF87F2117FB495900697803 /* BackendProxy.h in Sources */,
-				EFF87F2217FB495900697803 /* BackendProxy.m in Sources */,
-				EFF87F2317FB495900697803 /* serverResponse.h in Sources */,
-				EFF87F2417FB495900697803 /* serverResponse.m in Sources */,
+				EFF87F2C17FB4F4500697803 /* BackendProxy.m in Sources */,
+				EFF87F2E17FB4F4500697803 /* serverResponse.m in Sources */,
 				EFB2F35017FA2B470089DF48 /* Connect_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +505,7 @@
 					"-ObjC",
 				);
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -539,6 +536,7 @@
 				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

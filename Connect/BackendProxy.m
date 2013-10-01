@@ -39,8 +39,8 @@
     NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
     // imprimo el resultado del post para verificar
-    NSLog(@"Response: %@", result);
-    NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+    //NSLog(@"Response: %@", result);
+    //NSLog(@"Response: %ld", (long)urlResponse.statusCode);
     
     //si el server devuelve un usuario
     if ((NSInteger)urlResponse.statusCode == 200){
