@@ -20,7 +20,7 @@
     
     // POST
     NSMutableURLRequest *request = [NSMutableURLRequest
-                                    requestWithURL:[NSURL URLWithString:@"http://servidorpis.azurewebsites.net/api/login/"]];
+                                    requestWithURL:[NSURL URLWithString:@"http://testpis.azurewebsites.net/api/login/"]];
     
     NSError *error;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
@@ -92,7 +92,7 @@
     
     // POST
     NSMutableURLRequest *request = [NSMutableURLRequest
-                                    requestWithURL:[NSURL URLWithString:@"http://servidorpis.azurewebsites.net/api/signup/"]];
+                                    requestWithURL:[NSURL URLWithString:@"http://testpis.azurewebsites.net/api/signup/"]];
     
     NSError *error;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
