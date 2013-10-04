@@ -128,7 +128,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725496530532837" green="0.93725496530532837" blue="0.95686280727386475" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="wsN-I6-iMd"/>
+                    <navigationItem key="navigationItem" title="Settings" id="wsN-I6-iMd">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="4Hg-37-nft">
+                            <connections>
+                                <segue destination="JDP-Rj-uJS" kind="modal" identifier="logoutSegue" modalTransitionStyle="crossDissolve" id="h4q-y0-RhY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="vOu-F7-n8O" id="ZN8-b1-iXr"/>
                     </connections>
