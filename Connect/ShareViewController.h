@@ -12,9 +12,13 @@
     IBOutlet UIButton *btnBack;
     IBOutlet UIButton *btnSettings;
     IBOutlet UIImageView *QRImage;
+    IBOutlet UILabel *a;
+
 }
 
 @property(nonatomic,retain) UIButton *btnBack;
+@property(nonatomic,retain) UILabel *a;
+
 @property(nonatomic,retain) UIButton *btnSettings;
 @property(nonatomic,retain) UIImageView *QRImage;
 

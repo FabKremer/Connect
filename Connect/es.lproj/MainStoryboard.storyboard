@@ -30,7 +30,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="AoV-sL-yb6">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="ujh-7n-G7i" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujh-7n-G7i" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="p6y-Tp-zvN"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="px7-yN-fpm">
@@ -116,7 +116,7 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P8c-Iv-0HK">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P8c-Iv-0HK" id="FGV-Vp-IMQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -128,7 +128,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725496530532837" green="0.93725496530532837" blue="0.95686280727386475" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Configuración" id="wsN-I6-iMd"/>
+                    <navigationItem key="navigationItem" title="Configuración" id="wsN-I6-iMd">
+                        <barButtonItem key="rightBarButtonItem" title="Salir" id="eGl-uh-5RQ">
+                            <connections>
+                                <segue destination="JDP-Rj-uJS" kind="modal" id="KXt-aQ-2Lb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="vOu-F7-n8O" id="ZN8-b1-iXr"/>
                     </connections>
@@ -146,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="t1D-xa-ceg" kind="relationship" relationship="rootViewController" id="qla-r4-G27"/>
+                        <segue destination="t1D-xa-ceg" kind="relationship" relationship="rootViewController" id="Xha-ok-1Sg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFT-fu-Klx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +162,7 @@
         <!--Login View Controller-->
         <scene sceneID="Aht-Ws-55b">
             <objects>
-                <viewController id="t1D-xa-ceg" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t1D-xa-ceg" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zvx-Mm-UMx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -427,7 +433,6 @@
                         <outlet property="txtWrong" destination="5fU-Wb-xNn" id="MhJ-Cp-ggC"/>
                         <outlet property="wrongView" destination="GCy-cP-wil" id="tS4-te-HKP"/>
                         <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="BPD-BN-jYw"/>
-                        <segue destination="t1D-xa-ceg" kind="modal" identifier="cancelSegue" modalTransitionStyle="coverVertical" id="mJB-57-TxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSr-ua-Lb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,7 +446,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BPD-BN-jYw"/>
-        <segue reference="mJB-57-TxT"/>
+        <segue reference="TZN-CF-NqG"/>
     </inferredMetricsTieBreakers>
 </document>

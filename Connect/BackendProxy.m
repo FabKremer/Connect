@@ -67,7 +67,9 @@
         //******************
         //GUARDO EL USUARIO
         //*****************
-        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:userId forKey:@"id"];
+
         return sr;
     }
     
@@ -137,6 +139,10 @@
         //******************
         //GUARDO EL USUARIO
         //*****************
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:userId forKey:@"id"];
+
     
         return sr;
     }

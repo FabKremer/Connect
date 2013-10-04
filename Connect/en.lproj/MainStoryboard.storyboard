@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="-468"/>
+            <point key="canvasLocation" x="1704" y="-460"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="YUK-bc-xTy">
@@ -162,7 +162,7 @@
         <!--Login View Controller-->
         <scene sceneID="Aht-Ws-55b">
             <objects>
-                <viewController id="t1D-xa-ceg" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t1D-xa-ceg" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zvx-Mm-UMx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -223,14 +223,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not a member yet?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2t-7j-9NE">
-                                <rect key="frame" x="46" y="446" width="151" height="21"/>
+                                <rect key="frame" x="46" y="445.99999999999994" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jDe-Rm-m3x">
-                                <rect key="frame" x="181" y="435" width="104" height="44"/>
+                                <rect key="frame" x="181" y="434.99999999999994" width="104" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
@@ -435,11 +435,27 @@
                         <outlet property="txtWrong" destination="T7B-po-ySQ" id="9rn-fU-pXQ"/>
                         <outlet property="wrongView" destination="pp0-WG-JSE" id="Zzc-Pa-6sa"/>
                         <segue destination="ujh-7n-G7i" kind="modal" identifier="shareSegueFR" id="BPD-BN-jYw"/>
+                        <segue destination="z5e-EN-Oc9" kind="push" id="igV-oF-08f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSr-ua-Lb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357" y="-428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7E9-ZI-owp">
+            <objects>
+                <viewController id="z5e-EN-Oc9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I25-VZ-EMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eKT-kK-EfF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHd-0p-47d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-428"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -448,6 +464,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BPD-BN-jYw"/>
+        <segue reference="TZN-CF-NqG"/>
     </inferredMetricsTieBreakers>
 </document>

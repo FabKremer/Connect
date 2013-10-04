@@ -15,7 +15,7 @@
 
 @implementation ShareViewController
 
-@synthesize btnBack,btnSettings,QRImage;
+@synthesize btnBack,btnSettings,QRImage,a;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,13 +31,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //first encode the string into a matrix of bools, TRUE for black dot and FALSE for white. Let the encoder decide the error correction level and version
-    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:@"hola"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userid=[defaults stringForKey:@"id"];
+
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:userid];
 
     //then render the matrix
     UIImage* qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:250];
 
     //put the image into the view
     [QRImage setImage:qrcodeImage];
+    
+
 
 }
 

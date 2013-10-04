@@ -30,6 +30,7 @@
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
 		9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5017F7342D0041482C /* Localizable.strings */; };
 		9BA68F5817F73CA20041482C /* 4304932707_e07e0fe53c_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */; };
+		9BAA12E117FF6AFA00E4EE04 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */; };
 		EFB2F34617FA2B460089DF48 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB2F34517FA2B460089DF48 /* XCTest.framework */; };
 		EFB2F34717FA2B460089DF48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161817EE280D00C8B943 /* Foundation.framework */; };
 		EFB2F34817FA2B460089DF48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161617EE280D00C8B943 /* UIKit.framework */; };
@@ -108,6 +109,8 @@
 		9BA68F4F17F7342D0041482C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5217F737B60041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
+		9BAA12DF17FF6AFA00E4EE04 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		EFB2F34417FA2B460089DF48 /* Connect Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Connect Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB2F34517FA2B460089DF48 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EFB2F34B17FA2B460089DF48 /* Connect Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Connect Tests-Info.plist"; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				EFF87F1D17FB1E1E00697803 /* serverResponse.m */,
 				9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */,
 				9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */,
+				9BAA12DF17FF6AFA00E4EE04 /* SocialViewController.h */,
+				9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */,
 				9B2B161D17EE280D00C8B943 /* Supporting Files */,
 			);
 			path = Connect;
@@ -403,6 +408,7 @@
 				EFB2F35D17FA53450089DF48 /* BackendProxy.m in Sources */,
 				9B2B163A17EE280D00C8B943 /* ScanViewController.m in Sources */,
 				9B2B164817EE29D500C8B943 /* LoginViewController.m in Sources */,
+				9BAA12E117FF6AFA00E4EE04 /* SocialViewController.m in Sources */,
 				9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */,
 				9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */,
 			);

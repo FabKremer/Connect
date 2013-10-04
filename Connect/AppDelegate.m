@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LoginViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user = [defaults stringForKey:@"id"];
+    if (user){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
+        self.window.rootViewController= viewController;        
+    }
     return YES;
 }
 							
