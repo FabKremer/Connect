@@ -31,6 +31,8 @@
 		9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5017F7342D0041482C /* Localizable.strings */; };
 		9BA68F5817F73CA20041482C /* 4304932707_e07e0fe53c_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */; };
 		9BAA12E117FF6AFA00E4EE04 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */; };
+		EF1F903C180216DD00FAFE98 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1F903B180216DD00FAFE98 /* Reachability.m */; };
+		EF1F903F1802175000FAFE98 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1F903E1802175000FAFE98 /* SystemConfiguration.framework */; };
 		EFB2F34617FA2B460089DF48 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB2F34517FA2B460089DF48 /* XCTest.framework */; };
 		EFB2F34717FA2B460089DF48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161817EE280D00C8B943 /* Foundation.framework */; };
 		EFB2F34817FA2B460089DF48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161617EE280D00C8B943 /* UIKit.framework */; };
@@ -111,6 +113,9 @@
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
 		9BAA12DF17FF6AFA00E4EE04 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		EF1F903A180216DD00FAFE98 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EF1F903B180216DD00FAFE98 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		EF1F903E1802175000FAFE98 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EFB2F34417FA2B460089DF48 /* Connect Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Connect Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB2F34517FA2B460089DF48 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EFB2F34B17FA2B460089DF48 /* Connect Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Connect Tests-Info.plist"; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1F903F1802175000FAFE98 /* SystemConfiguration.framework in Frameworks */,
 				9B0C4D2617F68DD000BF3EDD /* Security.framework in Frameworks */,
 				9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */,
 				9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */,
@@ -173,6 +179,7 @@
 		9B2B161517EE280D00C8B943 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF1F903E1802175000FAFE98 /* SystemConfiguration.framework */,
 				9B0C4D2517F68DD000BF3EDD /* Security.framework */,
 				9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */,
 				9B2B161617EE280D00C8B943 /* UIKit.framework */,
@@ -197,6 +204,8 @@
 				9B2B163917EE280D00C8B943 /* ScanViewController.m */,
 				9B2B164617EE29D500C8B943 /* LoginViewController.h */,
 				9B2B164717EE29D500C8B943 /* LoginViewController.m */,
+				EF1F903A180216DD00FAFE98 /* Reachability.h */,
+				EF1F903B180216DD00FAFE98 /* Reachability.m */,
 				9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */,
 				9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */,
 				EFB2F35B17FA53450089DF48 /* BackendProxy.h */,
@@ -404,6 +413,7 @@
 				EFF87F1E17FB1E1E00697803 /* serverResponse.m in Sources */,
 				9B2B162317EE280D00C8B943 /* main.m in Sources */,
 				9B2B162717EE280D00C8B943 /* AppDelegate.m in Sources */,
+				EF1F903C180216DD00FAFE98 /* Reachability.m in Sources */,
 				9B2B163317EE280D00C8B943 /* ShareViewController.mm in Sources */,
 				EFB2F35D17FA53450089DF48 /* BackendProxy.m in Sources */,
 				9B2B163A17EE280D00C8B943 /* ScanViewController.m in Sources */,

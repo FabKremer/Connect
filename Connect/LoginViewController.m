@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RegisterViewController.h"
 #import "BackendProxy.h"
+#import "Reachability.h"
+
 @interface LoginViewController ()
 
 @end
@@ -96,17 +98,29 @@
 -(void)processLogin{
     //llamo a la funcion de la clase BackendProxy
     if (mail!=nil && password!= nil && ![mail isEqualToString:@""] && ![password isEqualToString:@""]){//no hay cosas vacias
-        serverResponse * sr = [BackendProxy login :txtMail.text :txtPassword.text];
-          
-        //comparo segun lo que me dio la funcion enterUser para ver como sigo
-        if ([sr getCodigo] == 200){
-            [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
+        
+        //verifico conexion con el server
+        Reachability *networkReachability = [Reachability reachabilityWithHostName:@"testpis.azurewebsites.net"];
+        NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+
+        if (networkStatus == NotReachable){
+            //si no hay conexion con el server
+            NSLog(@"No es posible conectarse al servidor");
         }
         else{
-            txtPassword.text=@"";
-            password=nil;
-            txtWrong.text=NSLocalizedString(@"Invalid Mail and/or Password", nil);
-            [wrongView setHidden:NO];
+            
+            serverResponse * sr = [BackendProxy login :txtMail.text :txtPassword.text];
+            
+            //comparo segun lo que me dio la funcion enterUser para ver como sigo
+            if ([sr getCodigo] == 200){
+                [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
+            }
+            else{
+                txtPassword.text=@"";
+                password=nil;
+                txtWrong.text=NSLocalizedString(@"Invalid Mail and/or Password", nil);
+                [wrongView setHidden:NO];
+            }
         }
     }
     else{
