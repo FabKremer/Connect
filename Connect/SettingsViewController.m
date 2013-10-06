@@ -133,5 +133,13 @@
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"logoutSegue"]){
+        //borro todo lo persistido
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    }
+
+}
 
 @end

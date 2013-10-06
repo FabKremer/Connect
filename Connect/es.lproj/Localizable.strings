@@ -13,3 +13,7 @@
 "Mail already taken" = "Mail ya registrado";
 "Passwords doesn't match" = "Las contraseñas no coinciden";
 "Invalid Mail" = "Mail Invalido";
+"Complete all the fields to login" = "Debes completar todos los campos";
+"Complete all the fields to register" = "Debes completar todos los campos";
+"Invalid Mail and/or Password" = "Mail y/o Contraseña invalidos";
+"Password too short" = "Contraseña muy corta";

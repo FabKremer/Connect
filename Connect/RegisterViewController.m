@@ -51,8 +51,7 @@
     btnRegister.clipsToBounds = YES;
     btnRegister.layer.cornerRadius = 15.0f;
     btnRegister.clipsToBounds = YES;
-    [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
-    [btnRegister setEnabled:NO];
+
     btnWrong.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
 
     [wrongView setHidden:YES];
@@ -130,73 +129,100 @@
 -(void)processRegistration{
     password = txtPassword.text;
     password2 = txtPassword2.text;
-    
-    NSString *expression = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSError *error = NULL;
-    
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
-    
-    NSTextCheckingResult *match = [regex firstMatchInString:mail options:0 range:NSMakeRange(0, [mail length])];
-    
-    if (match){
-        //Matches
-        if ([password isEqualToString:password2]) {
+    if (name!=nil && mail!=nil && password!=nil && password2!=nil && ![name isEqualToString:@""] && ![mail isEqualToString:@""] &&![password isEqualToString:@""] &&![password2 isEqualToString:@""] ){
+        if ([password length]>=6){
+            NSString *expression = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+            NSError *error = NULL;
             
-            name = txtName.text;
-            mail = txtMail.text;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
+            
+            NSTextCheckingResult *match = [regex firstMatchInString:mail options:0 range:NSMakeRange(0, [mail length])];
+            
+            if (match){
+                //Matches
+                if ([password isEqualToString:password2]) {
+                    
+                    name = txtName.text;
+                    mail = txtMail.text;
 
-            NSString * facebook = @"";
-            NSString * linkedin = @"";
-            
-            //llamo a la funcion de la clase BackendProxy
-            serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
-            
-            //comparo segun lo que me dio la funcion enterUser para ver como sigo
-            if ([sr getCodigo] == 200){
-                // paso de pantalla
-                [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+                    NSString * facebook = @"";
+                    NSString * linkedin = @"";
+                    
+                    //llamo a la funcion de la clase BackendProxy
+                    serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
+                    
+                    //comparo segun lo que me dio la funcion enterUser para ver como sigo
+                    if ([sr getCodigo] == 200){
+                        // paso de pantalla
+                        [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+                    }
+                    else{
+                        //error 410
+                        //el usuario ya existe
+                        [wrongView setHidden:NO];
+                        txtPassword.text=@"";
+                        txtPassword2.text=@"";
+                        password=nil;
+                        password2=nil;
+                        txtWrong.text=NSLocalizedString(@"Mail already taken", nil);
+                    }
+                    
+                }
+                else{
+                    //las contrasenas no son igules
+                    [wrongView setHidden:NO];
+                    txtPassword.text=@"";
+                    txtPassword2.text=@"";
+                    password=nil;
+                    password2=nil;
+                    txtWrong.text=NSLocalizedString(@"Passwords doesn't match", nil);
+                    
+                }
             }
             else{
-                //error 410
-                //el usuario ya existe
                 [wrongView setHidden:NO];
                 txtPassword.text=@"";
                 txtPassword2.text=@"";
                 password=nil;
                 password2=nil;
-                [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
-                [btnRegister setEnabled:NO];
-                txtWrong.text=NSLocalizedString(@"Mail already taken", nil);
+                txtWrong.text=NSLocalizedString(@"Invalid Mail", nil);
             }
-            
         }
         else{
-            //las contrasenas no son igules
             [wrongView setHidden:NO];
-            txtPassword.text=@"";
-            txtPassword2.text=@"";
-            password=nil;
-            password2=nil;
-            [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
-            [btnRegister setEnabled:NO];
-            txtWrong.text=NSLocalizedString(@"Passwords doesn't match", nil);
-            
+            txtWrong.text=NSLocalizedString(@"Password too short", nil);
+
         }
-    }
-    else{
+    }else{
         [wrongView setHidden:NO];
-        txtPassword.text=@"";
-        txtPassword2.text=@"";
-        password=nil;
-        password2=nil;
-        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
-        [btnRegister setEnabled:NO];
-        txtWrong.text=NSLocalizedString(@"Invalid Mail", nil);
+        txtWrong.text=NSLocalizedString(@"Complete all the fields to register", nil);
+
     }
     
     [spinner stopAnimating];
     [spinner setHidden:YES];
 }
+
+
+ - (void)textFieldDidBeginEditing:(UITextField *)textField
+ {
+     if (textField.tag==3 || textField.tag==4 )//pass1 or pass2 that are hidden if not
+         [self animateTextField: textField up: YES];
+ }
+
+ - (void) animateTextField: (UITextField*) textField up: (BOOL) up
+ {
+     const int movementDistance = 80;
+     const float movementDuration = 0.3f; // tweak as needed
+     
+     int movement = (up ? -movementDistance : movementDistance);
+     
+     [UIView beginAnimations: @"anim" context: nil];
+     [UIView setAnimationBeginsFromCurrentState: YES];
+     [UIView setAnimationDuration: movementDuration];
+     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+     [UIView commitAnimations];
+ }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     [wrongView setHidden:YES];
@@ -213,6 +239,9 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
+    if (textField.tag==3 || textField.tag==4 )//pass1 or pass2 that are hidden if not
+        [self animateTextField: textField up: NO];
+    
     if (textField.tag==1)//name
         name=textField.text;
     else if (textField.tag==2)//mail
@@ -222,13 +251,13 @@
     else if (textField.tag==4)//pass2
         password2=textField.text;
     
-    if (name!=nil && mail!=nil && password!=nil && password2!=nil && ![name isEqualToString:@""] && ![mail isEqualToString:@""] &&![password isEqualToString:@""] &&![password2 isEqualToString:@""] ){
-        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:1]];
-        [btnRegister setEnabled:YES];
-    }else{
-        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
-        [btnRegister setEnabled:NO];
-    }
+//    if (name!=nil && mail!=nil && password!=nil && password2!=nil && ![name isEqualToString:@""] && ![mail isEqualToString:@""] &&![password isEqualToString:@""] &&![password2 isEqualToString:@""] ){
+//        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:1]];
+//        [btnRegister setEnabled:YES];
+//    }else{
+//        [btnRegister setBackgroundColor:[UIColor colorWithRed:0.0/255.0f green:175.0/255.0f blue:240.0/255.0f alpha:0.5]];
+//        [btnRegister setEnabled:NO];
+//    }
     
 }
 

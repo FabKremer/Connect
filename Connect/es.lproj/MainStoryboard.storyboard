@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" title="Configuración" id="wsN-I6-iMd">
                         <barButtonItem key="rightBarButtonItem" title="Salir" id="eGl-uh-5RQ">
                             <connections>
-                                <segue destination="JDP-Rj-uJS" kind="modal" id="KXt-aQ-2Lb"/>
+                                <segue destination="JDP-Rj-uJS" kind="modal" identifier="logoutSegue" id="KXt-aQ-2Lb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -246,14 +246,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail y/o Contraseña invalidos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YFd-8y-Kmj">
-                                        <rect key="frame" x="65" y="5" width="211" height="21"/>
+                                        <rect key="frame" x="40" y="5" width="266" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="IWc-HD-X9o">
-                                        <rect key="frame" x="35" y="5" width="22" height="22"/>
+                                        <rect key="frame" x="10" y="5" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,6 +283,7 @@
                         <outlet property="table" destination="CO9-kF-Vk1" id="jwc-iF-sIx"/>
                         <outlet property="txtMail" destination="ix3-82-S24" id="t7p-G0-deq"/>
                         <outlet property="txtPassword" destination="OGv-J6-NXc" id="4rC-QR-qJb"/>
+                        <outlet property="txtWrong" destination="YFd-8y-Kmj" id="wJH-wC-Snb"/>
                         <outlet property="wrongView" destination="Kit-Fw-Nz2" id="q3u-6z-DXW"/>
                         <segue destination="ZwF-Vy-p1H" kind="push" identifier="registerSegue" id="OD2-la-W03"/>
                         <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFL" id="TZN-CF-NqG"/>
@@ -346,7 +347,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" minimumFontSize="17" id="HgW-05-TfI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña (al menos 6 caracteres)" minimumFontSize="17" id="HgW-05-TfI">
                                 <rect key="frame" x="20" y="346" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,14 +370,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail Already Exists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5fU-Wb-xNn">
-                                        <rect key="frame" x="65" y="5" width="211" height="21"/>
+                                        <rect key="frame" x="40" y="5" width="260" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="5oJ-A2-tEd">
-                                        <rect key="frame" x="35" y="5" width="22" height="22"/>
+                                        <rect key="frame" x="10" y="5" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
