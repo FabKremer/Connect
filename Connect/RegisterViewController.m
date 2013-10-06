@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BackendProxy.h"
+#import "Reachability.h"
 
 @interface RegisterViewController ()
 
@@ -142,29 +143,42 @@
                 //Matches
                 if ([password isEqualToString:password2]) {
                     
-                    name = txtName.text;
-                    mail = txtMail.text;
-
-                    NSString * facebook = @"";
-                    NSString * linkedin = @"";
+                    //verifico conexion con el server
+                    Reachability *networkReachability = [Reachability reachabilityWithHostName:@"testpis.azurewebsites.net"];
+                    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
                     
-                    //llamo a la funcion de la clase BackendProxy
-                    serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
-                    
-                    //comparo segun lo que me dio la funcion enterUser para ver como sigo
-                    if ([sr getCodigo] == 200){
-                        // paso de pantalla
-                        [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+                    if (networkStatus == NotReachable){
+                        //si no hay conexion con el server
+                        NSLog(@"No es posible conectarse al servidor");
                     }
                     else{
-                        //error 410
-                        //el usuario ya existe
-                        [wrongView setHidden:NO];
-                        txtPassword.text=@"";
-                        txtPassword2.text=@"";
-                        password=nil;
-                        password2=nil;
-                        txtWrong.text=NSLocalizedString(@"Mail already taken", nil);
+
+                    
+                        name = txtName.text;
+                        mail = txtMail.text;
+
+                        NSString * facebook = @"";
+                        NSString * linkedin = @"";
+                    
+                        //llamo a la funcion de la clase BackendProxy
+                        serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
+                    
+                        //comparo segun lo que me dio la funcion enterUser para ver como sigo
+                        if ([sr getCodigo] == 200){
+                            // paso de pantalla
+                            [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+                        }
+                        else{
+                            //error 410
+                            //el usuario ya existe
+                            [wrongView setHidden:NO];
+                            txtPassword.text=@"";
+                            txtPassword2.text=@"";
+                            password=nil;
+                            password2=nil;
+                            txtWrong.text=NSLocalizedString(@"Mail already taken", nil);
+                        }
+                        
                     }
                     
                 }
