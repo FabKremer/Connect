@@ -13,7 +13,10 @@
 "Mail already taken" = "Mail already taken";
 "Passwords doesn't match" = "Passwords doesn't match";
 "Invalid Mail" = "Invalid Mail";
-"Complete all the fields to login" = "You may complete all the fields";
-"Complete all the fields to register" = "You may complete all the fields";
+"Complete all the fields to login" = "You must complete all the fields";
+"Complete all the fields to register" = "You must complete all the fields";
 "Invalid Mail and/or Password" = "Invalid Mail and/or Password";
 "Password too short" = "Password too short";
+"No Internet Connection Login" = "You must have internet in order to login. Check your internet connection and try again.";
+"No Internet Connection Register" = "You must have internet in order to register. Check your internet connection and try again.";
+"Connection Failed" = "Connection Failed";

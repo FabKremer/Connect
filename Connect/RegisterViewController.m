@@ -148,8 +148,10 @@
                     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
                     
                     if (networkStatus == NotReachable){
-                        //si no hay conexion con el server
-                        NSLog(@"No es posible conectarse al servidor");
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Register", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                        [alert show];
+                        
+                        //NSLog(@"No es posible conectarse al servidor");
                     }
                     else{
 

@@ -17,3 +17,6 @@
 "Complete all the fields to register" = "Debes completar todos los campos";
 "Invalid Mail and/or Password" = "Mail y/o Contraseña invalidos";
 "Password too short" = "Contraseña muy corta";
+"No Internet Connection Login" = "Debes estar conectado a internet para iniciar sesion. Chequea tu conexion a internet y vuelve a intentarlo.";
+"No Internet Connection Register" = "Debes estar conectado a internet para registrarte. Chequea tu conexion a internet y vuelve a intentarlo.";
+"Connection Failed" = "Conexion Fallida";
