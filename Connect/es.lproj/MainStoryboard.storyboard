@@ -9,7 +9,7 @@
         <scene sceneID="Phe-US-3du">
             <objects>
                 <navigationController definesPresentationContext="YES" id="GrG-O2-5KY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Compartir" id="HNR-nm-Y01"/>
+                    <tabBarItem key="tabBarItem" title="Compartir" image="qr.png" id="HNR-nm-Y01"/>
                     <navigationItem key="navigationItem" id="Cir-RZ-yxH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ah-hg-5Jm">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
@@ -69,7 +69,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Compartir" id="Ba8-l3-FTI"/>
+                    <tabBarItem key="tabBarItem" title="Compartir" image="qr.png" id="Ba8-l3-FTI"/>
                     <navigationItem key="navigationItem" title="Compartir" id="Ljp-a1-9tu">
                         <barButtonItem key="rightBarButtonItem" title="Configuración" style="plain" id="SOg-ec-adc">
                             <connections>
@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Escanear" id="oF0-JY-v4k"/>
+                    <tabBarItem key="tabBarItem" title="Escanear" image="camera.png" id="oF0-JY-v4k"/>
                     <navigationItem key="navigationItem" id="BV0-Yb-JT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
@@ -441,6 +441,11 @@
             <point key="canvasLocation" x="365" y="-274"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.png" width="34" height="26"/>
+        <image name="qr.png" width="30" height="30"/>
+        <image name="qr.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
