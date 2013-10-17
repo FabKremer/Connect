@@ -40,7 +40,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="GrG-O2-5KY" kind="relationship" relationship="viewControllers" id="W3H-Q9-5jY"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="jzo-pP-JSm"/>
+                        <segue destination="SI2-L6-21W" kind="relationship" relationship="viewControllers" id="kHp-qn-veQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwj-aq-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,18 +88,33 @@
         <!--Scan View Controller - Scan-->
         <scene sceneID="13">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController id="3" customClass="ScanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scan" image="camera.png" id="oF0-JY-v4k"/>
-                    <navigationItem key="navigationItem" id="BV0-Yb-JT8"/>
+                    <navigationItem key="navigationItem" title="Scan" id="BV0-Yb-JT8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="-460"/>
+            <point key="canvasLocation" x="2268" y="-604"/>
+        </scene>
+        <!--Navigation Controller - Scan-->
+        <scene sceneID="H7d-DJ-XGn">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="SI2-L6-21W" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="camera.png" id="aYz-bd-gXT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m5g-Xe-M7s">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="rootViewController" id="Dg2-1T-HVI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-pX-ROK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704" y="-598"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="YUK-bc-xTy">
@@ -223,14 +238,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not a member yet?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2t-7j-9NE">
-                                <rect key="frame" x="46" y="445.99999999999994" width="151" height="21"/>
+                                <rect key="frame" x="47" y="444.99999999999994" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jDe-Rm-m3x">
-                                <rect key="frame" x="181" y="434.99999999999994" width="104" height="44"/>
+                                <rect key="frame" x="182" y="433.99999999999994" width="104" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
@@ -460,6 +475,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.png" width="34" height="26"/>
         <image name="camera.png" width="34" height="26"/>
         <image name="qr.png" width="30" height="30"/>
         <image name="qr.png" width="30" height="30"/>

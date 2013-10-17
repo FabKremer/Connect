@@ -15,5 +15,6 @@
 
 + (serverResponse *)login :(NSString*)name :(NSString*)mail;
 + (serverResponse *)enterUser :(NSString*)name :(NSString*)mail :(NSString*)facebook :(NSString*)linkedin :(NSString*)password;
++ (serverResponse *)getUser :(NSString*)numId;
 
 @end
