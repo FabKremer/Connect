@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZBarSDK.h"
+//#import "ZBarSDK.h"
 
-@interface ScanViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate,ZBarReaderDelegate>{
+@interface ScanViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     IBOutlet UITextView *resultTextView;
 }
 @property (nonatomic, retain) IBOutlet UITextView *resultTextView;

@@ -30,10 +30,10 @@
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
 		9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5017F7342D0041482C /* Localizable.strings */; };
 		9BA68F5817F73CA20041482C /* 4304932707_e07e0fe53c_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */; };
-		9BAA12E117FF6AFA00E4EE04 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */; };
 		9BAA542C18030A2E00785373 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542B18030A2E00785373 /* qr.png */; };
 		9BAA542E18030A8200785373 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542D18030A8200785373 /* camera.png */; };
-		EF16AB551810AB05000DA919 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF16AB4F1810AB05000DA919 /* libzbar.a */; };
+		9BF6E6A11812EEA700BDF848 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6E6A01812EEA700BDF848 /* ConnectViewController.m */; };
+		9BF6E6A41812F78000BDF848 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF6E6A31812F78000BDF848 /* CoreAudio.framework */; };
 		EF16AB561810AB05000DA919 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = EF16AB511810AB05000DA919 /* zbar-back.png */; };
 		EF16AB571810AB05000DA919 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = EF16AB521810AB05000DA919 /* zbar-help.html */; };
 		EF16AB581810AB05000DA919 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = EF16AB531810AB05000DA919 /* zbar-helpicons.png */; };
@@ -123,10 +123,11 @@
 		9BA68F4F17F7342D0041482C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5217F737B60041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
-		9BAA12DF17FF6AFA00E4EE04 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
-		9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		9BAA542B18030A2E00785373 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
 		9BAA542D18030A8200785373 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9BF6E69F1812EEA700BDF848 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		9BF6E6A01812EEA700BDF848 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		9BF6E6A31812F78000BDF848 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		EF16AB3B1810AB05000DA919 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		EF16AB3C1810AB05000DA919 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		EF16AB3D1810AB05000DA919 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF6E6A41812F78000BDF848 /* CoreAudio.framework in Frameworks */,
 				EF16AB641810AB8D000DA919 /* CoreVideo.framework in Frameworks */,
 				EF16AB621810AB7D000DA919 /* AVFoundation.framework in Frameworks */,
 				EF16AB601810AB6C000DA919 /* libiconv.dylib in Frameworks */,
@@ -188,7 +190,6 @@
 				9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */,
 				9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */,
 				9B2B161917EE280D00C8B943 /* Foundation.framework in Frameworks */,
-				EF16AB551810AB05000DA919 /* libzbar.a in Frameworks */,
 				9B2B161B17EE280D00C8B943 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +231,7 @@
 		9B2B161517EE280D00C8B943 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BF6E6A31812F78000BDF848 /* CoreAudio.framework */,
 				EF16AB631810AB8D000DA919 /* CoreVideo.framework */,
 				EF16AB611810AB7D000DA919 /* AVFoundation.framework */,
 				EF16AB5F1810AB6C000DA919 /* libiconv.dylib */,
@@ -256,6 +258,8 @@
 				9BA68F5017F7342D0041482C /* Localizable.strings */,
 				9B2B163117EE280D00C8B943 /* ShareViewController.h */,
 				9B2B163217EE280D00C8B943 /* ShareViewController.mm */,
+				9BF6E69F1812EEA700BDF848 /* ConnectViewController.h */,
+				9BF6E6A01812EEA700BDF848 /* ConnectViewController.m */,
 				9B2B163817EE280D00C8B943 /* ScanViewController.h */,
 				9B2B163917EE280D00C8B943 /* ScanViewController.m */,
 				9B2B164617EE29D500C8B943 /* LoginViewController.h */,
@@ -270,8 +274,6 @@
 				EFF87F1D17FB1E1E00697803 /* serverResponse.m */,
 				9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */,
 				9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */,
-				9BAA12DF17FF6AFA00E4EE04 /* SocialViewController.h */,
-				9BAA12E017FF6AFA00E4EE04 /* SocialViewController.m */,
 				9B2B161D17EE280D00C8B943 /* Supporting Files */,
 			);
 			path = Connect;
@@ -545,8 +547,8 @@
 				9B2B163317EE280D00C8B943 /* ShareViewController.mm in Sources */,
 				EFB2F35D17FA53450089DF48 /* BackendProxy.m in Sources */,
 				9B2B163A17EE280D00C8B943 /* ScanViewController.m in Sources */,
+				9BF6E6A11812EEA700BDF848 /* ConnectViewController.m in Sources */,
 				9B2B164817EE29D500C8B943 /* LoginViewController.m in Sources */,
-				9BAA12E117FF6AFA00E4EE04 /* SocialViewController.m in Sources */,
 				9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */,
 				9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */,
 			);
@@ -643,13 +645,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/src/QR-Code-Encoder-for-Objective-C";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -673,6 +675,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/src/QR-Code-Encoder-for-Objective-C";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -680,21 +683,27 @@
 				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
 		9B2B164217EE280D00C8B943 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
 				INFOPLIST_FILE = "Connect/Connect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macdev/Connect/ZBarSDK,
+					"$(SRCROOT)/ZBarSDK",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -702,14 +711,20 @@
 		9B2B164317EE280D00C8B943 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
 				INFOPLIST_FILE = "Connect/Connect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macdev/Connect/ZBarSDK,
+					"$(SRCROOT)/ZBarSDK",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
