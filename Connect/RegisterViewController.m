@@ -168,7 +168,7 @@
                         //comparo segun lo que me dio la funcion enterUser para ver como sigo
                         if ([sr getCodigo] == 200){
                             // paso de pantalla
-                            [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+                            [self performSelectorOnMainThread:@selector(finishedLoading) withObject:nil waitUntilDone:NO];
                         }
                         else{
                             //error 410
@@ -219,6 +219,9 @@
     [spinner setHidden:YES];
 }
 
+-(void)finishedLoading{
+    [self performSegueWithIdentifier:@"socialSegue" sender:self];
+}
 
  - (void)textFieldDidBeginEditing:(UITextField *)textField
  {

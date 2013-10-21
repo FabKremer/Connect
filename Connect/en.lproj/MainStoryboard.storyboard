@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vo-OI-Bzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="276"/>
+            <point key="canvasLocation" x="2280" y="252"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AoV-sL-yb6">
@@ -45,7 +45,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwj-aq-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="292"/>
+            <point key="canvasLocation" x="1472" y="268"/>
         </scene>
         <!--Share View Controller - Share-->
         <scene sceneID="11">
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="276"/>
+            <point key="canvasLocation" x="2853" y="252"/>
         </scene>
         <!--Scan View Controller - Scan-->
         <scene sceneID="13">
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="-604"/>
+            <point key="canvasLocation" x="2844" y="-628"/>
         </scene>
         <!--Connect View Controller - Connect-->
         <scene sceneID="ZaK-tL-hWb">
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRf-mN-gda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-630"/>
+            <point key="canvasLocation" x="3412" y="-654"/>
         </scene>
         <!--Navigation Controller - Scan-->
         <scene sceneID="H7d-DJ-XGn">
@@ -175,7 +175,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-pX-ROK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="-598"/>
+            <point key="canvasLocation" x="2280" y="-622"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="YUK-bc-xTy">
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5U-gA-Plv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851" y="284"/>
+            <point key="canvasLocation" x="3427" y="260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0aA-pb-VJe">
@@ -511,28 +511,87 @@
                         <outlet property="txtPassword2" destination="Yt9-Qs-uNv" id="mzu-d9-6hP"/>
                         <outlet property="txtWrong" destination="T7B-po-ySQ" id="9rn-fU-pXQ"/>
                         <outlet property="wrongView" destination="pp0-WG-JSE" id="Zzc-Pa-6sa"/>
-                        <segue destination="ujh-7n-G7i" kind="modal" identifier="shareSegueFR" id="BPD-BN-jYw"/>
-                        <segue destination="z5e-EN-Oc9" kind="push" id="igV-oF-08f"/>
+                        <segue destination="D3Q-9g-YYk" kind="push" identifier="socialSegue" id="rLI-vk-OHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSr-ua-Lb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357" y="-428"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="7E9-ZI-owp">
+        <!--Social View Controller - Title-->
+        <scene sceneID="YMN-qh-Wof">
             <objects>
-                <viewController id="z5e-EN-Oc9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I25-VZ-EMQ">
+                <viewController id="D3Q-9g-YYk" customClass="SocialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qx3-Rn-xHQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X4S-yS-M9U">
+                                <rect key="frame" x="13" y="489" width="294" height="44"/>
+                                <color key="backgroundColor" red="0.058732008709999999" green="0.54750590229999996" blue="0.82126913270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueClicked:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="xnQ-b8-LWL"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="47E-FE-PLK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wGa-dx-0vw">
+                                        <rect key="frame" x="136" y="30" width="49" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="PCk-pm-mNc">
+                                <rect key="frame" x="142" y="438" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5R9-e8-11D">
+                                <rect key="frame" x="96" y="107" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbClicked:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="nqk-P4-VkF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gjv-Oy-DJ6">
+                                <rect key="frame" x="101" y="189" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login to Linkedin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eKT-kK-EfF"/>
+                    <navigationItem key="navigationItem" title="Title" id="pc6-lF-Co4"/>
+                    <connections>
+                        <outlet property="btnContinue" destination="X4S-yS-M9U" id="QsN-DJ-lwx"/>
+                        <outlet property="loginFb" destination="5R9-e8-11D" id="Gc9-x2-YHH"/>
+                        <outlet property="spinner" destination="PCk-pm-mNc" id="B9h-zY-aRU"/>
+                        <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="qEk-MQ-pkt"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cHd-0p-47d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAD-j5-hkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-428"/>
+            <point key="canvasLocation" x="945" y="-428"/>
         </scene>
     </scenes>
     <resources>
@@ -547,6 +606,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZN-CF-NqG"/>
+        <segue reference="qEk-MQ-pkt"/>
     </inferredMetricsTieBreakers>
 </document>

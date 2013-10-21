@@ -116,7 +116,7 @@
             
             //comparo segun lo que me dio la funcion enterUser para ver como sigo
             if ([sr getCodigo] == 200){
-                [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
+                [self performSelectorOnMainThread:@selector(finishedLoading) withObject:nil waitUntilDone:NO];
             }
             else{
                 txtPassword.text=@"";
@@ -131,8 +131,13 @@
         [wrongView setHidden:NO];
 
     }
+    
     [spinner stopAnimating];
     [spinner setHidden:YES];
+}
+
+-(void)finishedLoading{
+    [self performSegueWithIdentifier:@"shareSegueFL" sender:self];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

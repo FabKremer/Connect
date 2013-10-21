@@ -28,10 +28,12 @@
 		9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */; };
 		9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */; };
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
+		9BA5F6DB18149F0F008A08AA /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5F6DA18149F0F008A08AA /* SocialViewController.m */; };
 		9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5017F7342D0041482C /* Localizable.strings */; };
 		9BA68F5817F73CA20041482C /* 4304932707_e07e0fe53c_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */; };
 		9BAA542C18030A2E00785373 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542B18030A2E00785373 /* qr.png */; };
 		9BAA542E18030A8200785373 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542D18030A8200785373 /* camera.png */; };
+		9BBD6A371814B48B00D3C907 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */; };
 		9BF6E6A11812EEA700BDF848 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6E6A01812EEA700BDF848 /* ConnectViewController.m */; };
 		9BF6E6A41812F78000BDF848 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF6E6A31812F78000BDF848 /* CoreAudio.framework */; };
 		EF16AB561810AB05000DA919 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = EF16AB511810AB05000DA919 /* zbar-back.png */; };
@@ -118,6 +120,8 @@
 		9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QRCodeEncoderObjectiveCAtGithub.xcodeproj; path = "src/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub.xcodeproj"; sourceTree = "<group>"; };
+		9BA5F6D918149F0F008A08AA /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		9BA5F6DA18149F0F008A08AA /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		9BA68F4C17F733090041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9BA68F4D17F733090041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BA68F4F17F7342D0041482C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
 		9BAA542B18030A2E00785373 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
 		9BAA542D18030A8200785373 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9BF6E69F1812EEA700BDF848 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		9BF6E6A01812EEA700BDF848 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		9BF6E6A31812F78000BDF848 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -191,6 +196,7 @@
 				9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */,
 				9B2B161917EE280D00C8B943 /* Foundation.framework in Frameworks */,
 				9B2B161B17EE280D00C8B943 /* CoreGraphics.framework in Frameworks */,
+				9BBD6A371814B48B00D3C907 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +237,7 @@
 		9B2B161517EE280D00C8B943 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */,
 				9BF6E6A31812F78000BDF848 /* CoreAudio.framework */,
 				EF16AB631810AB8D000DA919 /* CoreVideo.framework */,
 				EF16AB611810AB7D000DA919 /* AVFoundation.framework */,
@@ -264,6 +271,8 @@
 				9B2B163917EE280D00C8B943 /* ScanViewController.m */,
 				9B2B164617EE29D500C8B943 /* LoginViewController.h */,
 				9B2B164717EE29D500C8B943 /* LoginViewController.m */,
+				9BA5F6D918149F0F008A08AA /* SocialViewController.h */,
+				9BA5F6DA18149F0F008A08AA /* SocialViewController.m */,
 				EF1F903A180216DD00FAFE98 /* Reachability.h */,
 				EF1F903B180216DD00FAFE98 /* Reachability.m */,
 				9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */,
@@ -543,6 +552,7 @@
 				EFF87F1E17FB1E1E00697803 /* serverResponse.m in Sources */,
 				9B2B162317EE280D00C8B943 /* main.m in Sources */,
 				9B2B162717EE280D00C8B943 /* AppDelegate.m in Sources */,
+				9BA5F6DB18149F0F008A08AA /* SocialViewController.m in Sources */,
 				EF1F903C180216DD00FAFE98 /* Reachability.m in Sources */,
 				9B2B163317EE280D00C8B943 /* ShareViewController.mm in Sources */,
 				EFB2F35D17FA53450089DF48 /* BackendProxy.m in Sources */,
@@ -693,6 +703,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/toptierlabs/Desktop/PIS/Connect,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
@@ -714,6 +725,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/toptierlabs/Desktop/PIS/Connect,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
