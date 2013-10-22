@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 //#import "ZBarSDK.h"
+#import "ScanditSDKBarcodePicker.h"
+#import "ScanditSDKOverlayController.h"
 
-@interface ScanViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
-    IBOutlet UITextView *resultTextView;
+@interface ScanViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate,ScanditSDKOverlayControllerDelegate>
+{
+    ScanditSDKBarcodePicker *picker;
 }
-@property (nonatomic, retain) IBOutlet UITextView *resultTextView;
+
+@property(nonatomic,retain) ScanditSDKBarcodePicker *picker;
 
 @end

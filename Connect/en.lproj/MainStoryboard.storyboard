@@ -192,7 +192,7 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P8c-Iv-0HK">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P8c-Iv-0HK" id="FGV-Vp-IMQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -577,6 +577,9 @@
                                 <state key="normal" title="Login to Linkedin">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="liClicked:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="CTi-x8-gtg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -585,6 +588,7 @@
                     <connections>
                         <outlet property="btnContinue" destination="X4S-yS-M9U" id="QsN-DJ-lwx"/>
                         <outlet property="loginFb" destination="5R9-e8-11D" id="Gc9-x2-YHH"/>
+                        <outlet property="loginLI" destination="gjv-Oy-DJ6" id="raQ-Au-ghg"/>
                         <outlet property="spinner" destination="PCk-pm-mNc" id="B9h-zY-aRU"/>
                         <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="qEk-MQ-pkt"/>
                     </connections>
@@ -606,6 +610,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qEk-MQ-pkt"/>
+        <segue reference="TZN-CF-NqG"/>
     </inferredMetricsTieBreakers>
 </document>

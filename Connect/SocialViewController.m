@@ -16,7 +16,7 @@
 
 @implementation SocialViewController
 
-@synthesize loginFb,spinner,btnContinue;
+@synthesize loginFb,spinner,btnContinue,loginLI;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,5 +92,16 @@
     [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
 }
 
+- (IBAction)liClicked:(id)sender {
+    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/113810631976867"];
+    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
+        [[UIApplication sharedApplication] openURL:facebookURL];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/mariarodriguez"]];
+    }
+
+    
+
+}
 
 @end

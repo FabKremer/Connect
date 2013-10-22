@@ -12,15 +12,19 @@
     IBOutlet UIButton *loginFb;
     IBOutlet UIActivityIndicatorView *spinner;
     IBOutlet UIButton *btnContinue;
+    IBOutlet UIButton *loginLI;
 
 }
 
 @property(nonatomic,retain) UIButton *loginFb;
+@property(nonatomic,retain) UIButton *loginLI;
 @property(nonatomic,retain) UIButton *btnContinue;
 
 @property(nonatomic,retain) UIActivityIndicatorView *spinner;
 
 - (IBAction)fbClicked:(id)sender;
+- (IBAction)liClicked:(id)sender;
+
 - (IBAction)continueClicked:(id)sender;
 
 @end
