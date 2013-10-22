@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController <UITableViewDataSource>{
+@interface SettingsViewController : UIViewController <UITableViewDataSource,UIActionSheetDelegate>{
     IBOutlet UIButton *btnBack;
     IBOutlet UITableView *table;
+    IBOutlet UIBarButtonItem *logout;
 
 }
 
 @property(nonatomic,retain) UIButton *btnBack;
 @property(nonatomic,retain) UITableView *table;
+@property(nonatomic,retain) UIBarButtonItem *logout;
 
 -(IBAction)back:(id)sender;
 

@@ -20,3 +20,5 @@
 "No Internet Connection Login" = "You must have internet in order to login. Check your internet connection and try again.";
 "No Internet Connection Register" = "You must have internet in order to register. Check your internet connection and try again.";
 "Connection Failed" = "Connection Failed";
+"Cancel" = "Cancel";
+"Logout" = "Logout";

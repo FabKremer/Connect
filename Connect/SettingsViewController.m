@@ -14,7 +14,7 @@
 
 @implementation SettingsViewController
 
-@synthesize table,btnBack;
+@synthesize table,btnBack,logout;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +30,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.table.dataSource=self;
+    [logout setTarget:self];
+    [logout setAction:@selector(logoutClicked:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -151,6 +153,23 @@
         }
     }
 
+}
+
+-(void)logoutClicked:(id)sender{
+    // Create the action sheet
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                         destructiveButtonTitle:NSLocalizedString(@"Logout", nil)
+                                              otherButtonTitles:nil];
+    [sheet showInView:self.view];
+
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+    }
 }
 
 @end

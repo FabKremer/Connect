@@ -165,11 +165,13 @@
 		9BA620731815DCB3003AE614 /* ScanditSDKOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanditSDKOverlayController.h; sourceTree = "<group>"; };
 		9BA6208C1815EBE8003AE614 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9BA6208F1815EC82003AE614 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		9BA68F4C17F733090041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9BA68F4D17F733090041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BA68F4F17F7342D0041482C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9BA68F5217F737B60041482C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
+		9BA6C35918171E2B00BF09FA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/scanditsdk.strings; sourceTree = "<group>"; };
+		9BA6C35C18171E2B00BF09FA /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9BA6C35D18171E2B00BF09FA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9BA6C35E18171E2B00BF09FA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BA6C35F18171E2C00BF09FA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BAA542B18030A2E00785373 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
 		9BAA542D18030A8200785373 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -598,7 +600,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B2B162017EE280D00C8B943 /* en */,
-				9BA68F4D17F733090041482C /* es */,
+				9BA6C35E18171E2B00BF09FA /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -607,7 +609,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B2B162F17EE280D00C8B943 /* en */,
-				9BA68F4C17F733090041482C /* es */,
+				9BA6C35C18171E2B00BF09FA /* es */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +619,7 @@
 			children = (
 				9BA620631815DCB3003AE614 /* de */,
 				9BA620651815DCB3003AE614 /* en */,
+				9BA6C35918171E2B00BF09FA /* es */,
 			);
 			name = scanditsdk.strings;
 			sourceTree = "<group>";
@@ -625,7 +628,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9BA68F4F17F7342D0041482C /* en */,
-				9BA68F5217F737B60041482C /* es */,
+				9BA6C35D18171E2B00BF09FA /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EFB2F34D17FA2B460089DF48 /* en */,
+				9BA6C35F18171E2C00BF09FA /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

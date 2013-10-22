@@ -49,7 +49,7 @@
 - (void)scanditSDKOverlayController:(ScanditSDKOverlayController *)scanditSDKOverlayController1
                      didScanBarcode:(NSDictionary *)barcodeResult {
 	
-	[picker stopScanningAndKeepTorchState];
+	//[picker stopScanningAndKeepTorchState];
 	
     NSString *symbology = [barcodeResult objectForKey:@"symbology"];
 	NSString *barcode = [barcodeResult objectForKey:@"barcode"];
@@ -79,7 +79,7 @@
 - (void)scanditSDKOverlayController:(ScanditSDKOverlayController *)scanditSDKOverlayController
                     didManualSearch:(NSString *)input {
 	
-	[picker stopScanningAndKeepTorchState];
+	//[picker stopScanningAndKeepTorchState];
 	
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Manual input"]
                                                     message:input

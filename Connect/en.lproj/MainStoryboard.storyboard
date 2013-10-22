@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRf-mN-gda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="-654"/>
+            <point key="canvasLocation" x="3404" y="-622"/>
         </scene>
         <!--Navigation Controller - Scan-->
         <scene sceneID="H7d-DJ-XGn">
@@ -192,7 +192,7 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P8c-Iv-0HK">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P8c-Iv-0HK" id="FGV-Vp-IMQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -212,6 +212,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="logout" destination="4Hg-37-nft" id="drF-3c-eAj"/>
                         <outlet property="table" destination="vOu-F7-n8O" id="ZN8-b1-iXr"/>
                     </connections>
                 </viewController>
@@ -600,8 +601,6 @@
     </scenes>
     <resources>
         <image name="camera.png" width="34" height="26"/>
-        <image name="camera.png" width="34" height="26"/>
-        <image name="qr.png" width="30" height="30"/>
         <image name="qr.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
