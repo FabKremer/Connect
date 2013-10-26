@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 @implementation AppDelegate
 
+@synthesize session;
 // FBSample logic
 // The native facebook application transitions back to an authenticating application when the user
 // chooses to either log in, or cancel. The url passed to this method contains the token in the

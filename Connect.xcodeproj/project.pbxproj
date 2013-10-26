@@ -727,21 +727,22 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/toptierlabs/Desktop/PIS/Connect,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/src/QR-Code-Encoder-for-Objective-C/**",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/FacebookSDK",
 				);
 				INFOPLIST_FILE = "Connect/Connect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/ScanditSDK",
-					/Users/toptierlabs/Desktop/PIS/Connect,
+					"$(SRCROOT)/FacebookSDK.framework",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -755,21 +756,22 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/toptierlabs/Desktop/PIS/Connect,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Connect/Connect-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/src/QR-Code-Encoder-for-Objective-C/**",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/FacebookSDK",
 				);
 				INFOPLIST_FILE = "Connect/Connect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/ScanditSDK",
-					/Users/toptierlabs/Desktop/PIS/Connect,
+					"$(SRCROOT)/FacebookSDK.framework",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
