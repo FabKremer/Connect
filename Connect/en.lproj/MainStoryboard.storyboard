@@ -638,6 +638,8 @@
     </scenes>
     <resources>
         <image name="camera.png" width="34" height="26"/>
+        <image name="camera.png" width="34" height="26"/>
+        <image name="qr.png" width="30" height="30"/>
         <image name="qr.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
