@@ -9,6 +9,7 @@
 #import "SocialViewController.h"
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import <Foundation/NSNotificationQueue.h>
 
 @interface SocialViewController ()
 
@@ -16,7 +17,7 @@
 
 @implementation SocialViewController
 
-@synthesize loginFb,spinner,btnContinue,loginLI;
+@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,16 +93,136 @@
     [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
 }
 
-- (IBAction)liClicked:(id)sender {
-    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/113810631976867"];
-    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
-        [[UIApplication sharedApplication] openURL:facebookURL];
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/mariarodriguez"]];
-    }
+//- (IBAction)liClicked:(id)sender {
+//    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/113810631976867"];
+//    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
+//        [[UIApplication sharedApplication] openURL:facebookURL];
+//    } else {
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/mariarodriguez"]];
+//    }
+//
+//    
+//
+//}
 
+- (IBAction)button_TouchUp:(UIButton *)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    oAuthLoginView = [storyboard instantiateViewControllerWithIdentifier:@"linkedinpage"];
     
-
+    // register to be told when the login is finished
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loginViewDidFinish:)
+                                                 name:@"loginViewDidFinish"
+                                               object:oAuthLoginView];
+    
+    [self presentViewController:oAuthLoginView animated:YES completion:nil];
 }
+
+-(void) loginViewDidFinish:(NSNotification*)notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    // We're going to do these calls serially just for easy code reading.
+    // They can be done asynchronously
+    // Get the profile, then the network updates
+    [self profileApiCall];
+	
+}
+
+- (void)profileApiCall
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.linkedin.com/v1/people/~"];
+    OAMutableURLRequest *request =
+    [[OAMutableURLRequest alloc] initWithURL:url
+                                    consumer:oAuthLoginView.consumer
+                                       token:oAuthLoginView.accessToken
+                                    callback:nil
+                           signatureProvider:nil];
+    
+    [request setValue:@"json" forHTTPHeaderField:@"x-li-format"];
+    
+    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+    [fetcher fetchDataWithRequest:request
+                         delegate:self
+                didFinishSelector:@selector(profileApiCallResult:didFinish:)
+                  didFailSelector:@selector(profileApiCallResult:didFail:)];
+    
+}
+
+- (void)profileApiCallResult:(OAServiceTicket *)ticket didFinish:(NSData *)data
+{
+    NSString *responseBody = [[NSString alloc] initWithData:data
+                                                   encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *profile = [responseBody objectFromJSONString];
+    
+    if ( profile )
+    {
+        NSDictionary *a =[profile objectForKey:@"siteStandardProfileRequest"];
+        NSString *url = [a objectForKey:@"url"];
+        NSString * q = [[[NSURL alloc] initWithString:url] query];
+        NSArray * pairs = [q componentsSeparatedByString:@"&"];
+        NSMutableDictionary * kvPairs = [NSMutableDictionary dictionary];
+        for (NSString * pair in pairs) {
+            NSArray * bits = [pair componentsSeparatedByString:@"="];
+            NSString * key = [[bits objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+            NSString * value = [[bits objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+            [kvPairs setObject:value forKey:key];
+        }
+        
+        NSLog(@"id = %@", [kvPairs objectForKey:@"id"]);
+    }
+    [self.loginLI setEnabled:NO];
+    // The next thing we want to do is call the network updates
+    //[self networkApiCall];
+    
+}
+
+- (void)profileApiCallResult:(OAServiceTicket *)ticket didFail:(NSData *)error
+{
+    NSLog(@"%@",[error description]);
+}
+
+- (void)networkApiCall
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.linkedin.com/v1/people/~/network/updates?scope=self&count=1&type=STAT"];
+    OAMutableURLRequest *request =
+    [[OAMutableURLRequest alloc] initWithURL:url
+                                    consumer:oAuthLoginView.consumer
+                                       token:oAuthLoginView.accessToken
+                                    callback:nil
+                           signatureProvider:nil];
+    
+    [request setValue:@"json" forHTTPHeaderField:@"x-li-format"];
+    
+    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+    [fetcher fetchDataWithRequest:request
+                         delegate:self
+                didFinishSelector:@selector(networkApiCallResult:didFinish:)
+                  didFailSelector:@selector(networkApiCallResult:didFail:)];
+    
+}
+
+- (void)networkApiCallResult:(OAServiceTicket *)ticket didFinish:(NSData *)data
+{
+    NSString *responseBody = [[NSString alloc] initWithData:data
+                                                   encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *person = [[[[[responseBody objectFromJSONString]
+                               objectForKey:@"values"]
+                              objectAtIndex:0]
+                             objectForKey:@"updateContent"]
+                            objectForKey:@"person"];
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)networkApiCallResult:(OAServiceTicket *)ticket didFail:(NSData *)error
+{
+    NSLog(@"%@",[error description]);
+}
+
 
 @end

@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OAuthLoginView.h"
+#import "JSONKit.h"
+#import "OAConsumer.h"
+#import "OAMutableURLRequest.h"
+#import "OADataFetcher.h"
+#import "OATokenManager.h"
 
 @interface SocialViewController : UIViewController{
     IBOutlet UIButton *loginFb;
@@ -21,10 +27,14 @@
 @property(nonatomic,retain) UIButton *btnContinue;
 
 @property(nonatomic,retain) UIActivityIndicatorView *spinner;
+@property (nonatomic, retain) OAuthLoginView *oAuthLoginView;
 
 - (IBAction)fbClicked:(id)sender;
-- (IBAction)liClicked:(id)sender;
 
 - (IBAction)continueClicked:(id)sender;
+
+- (IBAction)button_TouchUp:(UIButton *)sender;
+- (void)profileApiCall;
+- (void)networkApiCall;
 
 @end

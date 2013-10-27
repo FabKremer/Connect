@@ -579,7 +579,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="liClicked:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="CTi-x8-gtg"/>
+                                    <action selector="button_TouchUp:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="LO4-vk-dCf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -598,6 +598,43 @@
             </objects>
             <point key="canvasLocation" x="945" y="-428"/>
         </scene>
+        <!--Auth Login View-->
+        <scene sceneID="nPL-pc-fMz">
+            <objects>
+                <viewController storyboardIdentifier="linkedinpage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z0t-FR-WAu" customClass="OAuthLoginView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fsl-pJ-BgD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="XbU-Pp-izk">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="K0J-eC-m7n">
+                                <rect key="frame" x="142" y="211" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="www.linkedin.com/uas/oauth/authorize" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="8ks-fc-SRH">
+                                <rect key="frame" x="8" y="31" width="304" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="K0J-eC-m7n" id="ooM-Vm-qZi"/>
+                        <outlet property="addressBar" destination="8ks-fc-SRH" id="UJb-ZG-Omv"/>
+                        <outlet property="webView" destination="XbU-Pp-izk" id="5bw-wh-YnT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odc-EQ-CQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1504" y="-622"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera.png" width="34" height="26"/>
@@ -609,6 +646,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZN-CF-NqG"/>
+        <segue reference="qEk-MQ-pkt"/>
     </inferredMetricsTieBreakers>
 </document>
