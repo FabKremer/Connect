@@ -592,6 +592,7 @@
                         <outlet property="loginLI" destination="gjv-Oy-DJ6" id="raQ-Au-ghg"/>
                         <outlet property="spinner" destination="PCk-pm-mNc" id="B9h-zY-aRU"/>
                         <segue destination="ujh-7n-G7i" kind="push" identifier="shareSegueFR" id="qEk-MQ-pkt"/>
+                        <segue destination="ZwF-Vy-p1H" kind="push" identifier="registerSegueFS" id="xaI-Jm-D3G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAD-j5-hkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,5 +650,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qEk-MQ-pkt"/>
+        <segue reference="xaI-Jm-D3G"/>
     </inferredMetricsTieBreakers>
 </document>

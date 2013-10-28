@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Foundation/NSNotificationQueue.h>
+#import "BackendProxy.h"
 
 @interface SocialViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation SocialViewController
 
-@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView;
+@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView, userMail, userName, userPass;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -90,8 +91,50 @@
         //para eso tambien tengo que empezar a hacer rodar el spinner
     
     //por ahora hagamos que solo te vaya a la pantalla de inicio.
-    [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+    [spinner setHidden:NO];
+    [spinner startAnimating];
+    [self performSelectorInBackground:@selector(processContinue) withObject:self];
 }
+
+-(void)processContinue{
+    
+    
+    if (! [BackendProxy internetConnection]){
+        //si no hay conexion con el server
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Register", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"1");
+    }
+    else{
+        NSLog(@"2");
+        //agarro facebook y linkedin
+        NSString * facebook = @"";
+        NSString * linkedin = @"";
+    
+        //llamo a la funcion de la clase BackendProxy
+        serverResponse * sr = [BackendProxy enterUser :userName :userMail :facebook :linkedin :userPass];
+    
+        //comparo segun lo que me dio la funcion enterUser para ver como sigo
+        if ([sr getCodigo] == 200){
+            //paso de pantalla
+            [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+        }
+        else{
+            //410, el usuraio ya existe, el mail acaba de ser tomado
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Registration Failed", nil) message:NSLocalizedString(@"Mail just taken", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+            
+            [self performSegueWithIdentifier:@"registerSegueFS" sender:self];
+        }
+    
+    
+    
+    }
+    
+    [spinner stopAnimating];
+    [spinner setHidden:YES];
+}
+
 
 //- (IBAction)liClicked:(id)sender {
 //    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/113810631976867"];

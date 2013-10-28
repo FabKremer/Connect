@@ -13,8 +13,11 @@
     
 }
 
++ (bool)internetConnection;
 + (serverResponse *)login :(NSString*)name :(NSString*)mail;
 + (serverResponse *)enterUser :(NSString*)name :(NSString*)mail :(NSString*)facebook :(NSString*)linkedin :(NSString*)password;
 + (serverResponse *)getUser :(NSString*)numId;
++ (serverResponse *)getUserByMail :(NSString*)mail;
++ (serverResponse *)addFriends:(NSString*)scanUser;
 
 @end

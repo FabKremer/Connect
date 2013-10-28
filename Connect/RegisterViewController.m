@@ -9,7 +9,7 @@
 #import "RegisterViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BackendProxy.h"
-#import "Reachability.h"
+#import "SocialViewController.h"
 
 @interface RegisterViewController ()
 
@@ -143,35 +143,22 @@
                 //Matches
                 if ([password isEqualToString:password2]) {
                     
-                    //verifico conexion con el server
-                    Reachability *networkReachability = [Reachability reachabilityWithHostName:@"testpis.azurewebsites.net"];
-                    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-                    
-                    if (networkStatus == NotReachable){
+                    if (! [BackendProxy internetConnection]){
+                        //si no hay conexion con el server
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Register", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                         [alert show];
-                        
-                        //NSLog(@"No es posible conectarse al servidor");
                     }
                     else{
 
                     
                         name = txtName.text;
                         mail = txtMail.text;
-
-                        NSString * facebook = @"";
-                        NSString * linkedin = @"";
                     
-                        //llamo a la funcion de la clase BackendProxy
-                        serverResponse * sr = [BackendProxy enterUser :name :mail :facebook :linkedin :password];
+                        //llamo a la funcion de la clase BackendProxy para ver si el mail esta ocupado
+                        serverResponse * sr = [BackendProxy getUserByMail:mail];
                     
-                        //comparo segun lo que me dio la funcion enterUser para ver como sigo
+                        //verifico el resultado de la funcion getUserByMail
                         if ([sr getCodigo] == 200){
-                            // paso de pantalla
-                            [self performSelectorOnMainThread:@selector(finishedLoading) withObject:nil waitUntilDone:NO];
-                        }
-                        else{
-                            //error 410
                             //el usuario ya existe
                             [wrongView setHidden:NO];
                             txtPassword.text=@"";
@@ -179,6 +166,11 @@
                             password=nil;
                             password2=nil;
                             txtWrong.text=NSLocalizedString(@"Mail already taken", nil);
+                        }
+                        else{
+                            //404, el usuario no existe
+                            //paso de pantalla
+                            [self performSelectorOnMainThread:@selector(finishedLoading) withObject:nil waitUntilDone:NO];
                         }
                         
                     }
@@ -280,6 +272,19 @@
     
 }
 
-
+//paso de valores entre views
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"socialSegue"])
+    {
+        // referencia de la view
+         SocialViewController * vc = [segue destinationViewController];
+        
+        //seteo de variables
+        vc.userName = name;
+        vc.userMail = mail;
+        vc.userPass = password;
+    }
+}
 
 @end

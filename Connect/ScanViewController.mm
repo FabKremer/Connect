@@ -7,7 +7,8 @@
 //
 
 #import "ScanViewController.h"
-#import "Reachability.h"
+#import "serverResponse.h"
+#import "BackendProxy.h"
 
 #define kScanditSDKAppKey    @"/Q44QDqYEeOfkoRnTkZF0Ie2RHLA2J2t8Cg92zgYL0I"
 
@@ -60,6 +61,29 @@
 						  cancelButtonTitle:@"OK"
 					      otherButtonTitles:nil];
 	[alert show];
+    
+    
+    if (! [BackendProxy internetConnection]){
+        //si no hay conexion con el server
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Connect", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+    else{
+    
+        //llamo a la funcion de BackendProxy para hacer amigos
+        serverResponse * sr = [BackendProxy addFriends:barcode];
+        
+        if ([sr getCodigo] == 200){
+            //si se hacen amigos, paso de pantalla
+            [self performSegueWithIdentifier:@" connectSegue" sender:self];
+        }
+        else{
+            //404, el usuraio no existe, no se pueden hacer amigos
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"User does not exist", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+
 }
 
 /**

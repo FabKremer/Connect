@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RegisterViewController.h"
 #import "BackendProxy.h"
-#import "Reachability.h"
 
 @interface LoginViewController ()
 
@@ -99,16 +98,10 @@
     //llamo a la funcion de la clase BackendProxy
     if (mail!=nil && password!= nil && ![mail isEqualToString:@""] && ![password isEqualToString:@""]){//no hay cosas vacias
         
-        //verifico conexion con el server
-        Reachability *networkReachability = [Reachability reachabilityWithHostName:@"testpis.azurewebsites.net"];
-        NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-
-        if (networkStatus == NotReachable){
+        if (! [BackendProxy internetConnection]){
             //si no hay conexion con el server
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Login", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
-
-            //NSLog(@"No es posible conectarse al servidor");
         }
         else{
             

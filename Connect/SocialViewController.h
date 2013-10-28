@@ -19,6 +19,9 @@
     IBOutlet UIActivityIndicatorView *spinner;
     IBOutlet UIButton *btnContinue;
     IBOutlet UIButton *loginLI;
+    NSString * userName;
+    NSString * userMail;
+    NSString * userPass;
 
 }
 
@@ -27,7 +30,11 @@
 @property(nonatomic,retain) UIButton *btnContinue;
 
 @property(nonatomic,retain) UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) OAuthLoginView *oAuthLoginView;
+@property(nonatomic, retain) OAuthLoginView *oAuthLoginView;
+
+@property(nonatomic, retain) NSString * userName;
+@property(nonatomic, retain) NSString * userMail;
+@property(nonatomic, retain) NSString * userPass;
 
 - (IBAction)fbClicked:(id)sender;
 
