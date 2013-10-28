@@ -52,15 +52,18 @@
 	
 	//[picker stopScanningAndKeepTorchState];
 	
-    NSString *symbology = [barcodeResult objectForKey:@"symbology"];
+//    NSString *symbology = [barcodeResult objectForKey:@"symbology"];
+    
+    //esto es lo que saco del escanner
 	NSString *barcode = [barcodeResult objectForKey:@"barcode"];
-    UIAlertView *alert = [[UIAlertView alloc]
-						  initWithTitle:[NSString stringWithFormat:@"Scanned %@", symbology]
-						  message:barcode
-						  delegate:self
-						  cancelButtonTitle:@"OK"
-					      otherButtonTitles:nil];
-	[alert show];
+    
+//    UIAlertView *alert = [[UIAlertView alloc]
+//						  initWithTitle:[NSString stringWithFormat:@"Scanned %@", symbology]
+//						  message:barcode
+//						  delegate:self
+//						  cancelButtonTitle:@"OK"
+//					      otherButtonTitles:nil];
+//	[alert show];
     
     
     if (! [BackendProxy internetConnection]){

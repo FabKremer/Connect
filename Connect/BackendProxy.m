@@ -332,11 +332,12 @@ NSString * server = @"developmentpis.azurewebsites.net";
     //si existe el id del susario escaneado
     if ([srScanUser getCodigo] == 200){
         //los hago amigos
-        NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [srUser getMail],@"MailFrom",
-                              [srScanUser getMail], @"MailTo",
-                              nil];
-    
+        
+        NSDictionary* info = [[NSMutableDictionary alloc] init];
+        [info setValue:[srUser getMail] forKey:@"MailFrom"];
+        [info setValue:[srScanUser getMail] forKey:@"MailTo"];
+
+        
         NSString * url = @"http://";
         NSString * url1 = [server copy];
         url = [url stringByAppendingString:url1];

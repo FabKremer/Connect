@@ -136,6 +136,11 @@
     }
     else{
         //agarro facebook y linkedin
+        if (!self.facebookID)
+            self.facebookID=@"";
+        if (!self.linkedinID)
+            self.linkedinID=@"";
+        
         NSString * facebook = self.facebookID;
         NSString * linkedin = self.linkedinID;
         
