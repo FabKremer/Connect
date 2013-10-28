@@ -15,7 +15,7 @@ NSString * server = @"developmentpis.azurewebsites.net";
 
 + (bool)internetConnection{
     //verifico conexion con el server
-    Reachability *networkReachability = [Reachability reachabilityWithHostName:@"developmentpis.azurewebsites.net"];
+    Reachability *networkReachability = [Reachability reachabilityWithHostName:server];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
     if (networkStatus == NotReachable){
@@ -329,51 +329,60 @@ NSString * server = @"developmentpis.azurewebsites.net";
     //get del usuario scaneado
     serverResponse * srScanUser = [BackendProxy getUser:scanUser];
     
-    //los hago amigos
-    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [srUser getMail],@"MailFrom",
-                          [srScanUser getMail], @"MailTo",
-                          nil];
+    //si existe el id del susario escaneado
+    if ([srScanUser getCodigo] == 200){
+        //los hago amigos
+        NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [srUser getMail],@"MailFrom",
+                              [srScanUser getMail], @"MailTo",
+                              nil];
     
-    NSString * url = @"http://";
-    NSString * url1 = [server copy];
-    url = [url stringByAppendingString:url1];
-    url = [url stringByAppendingString:@"/api/Friends/AddFriend"];
+        NSString * url = @"http://";
+        NSString * url1 = [server copy];
+        url = [url stringByAppendingString:url1];
+        url = [url stringByAppendingString:@"/api/Friends/AddFriend"];
     
-    // POST
-    NSMutableURLRequest *request = [NSMutableURLRequest
+        // POST
+        NSMutableURLRequest *request = [NSMutableURLRequest
                                     requestWithURL:[NSURL URLWithString:url]];
     
-    NSError *error;
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:postData];
+        NSError *error;
+        NSData *postData = [NSJSONSerialization dataWithJSONObject:info options:0 error:&error];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:postData];
     
-    //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
-    // imprimo lo que mando para verificar
-    //NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+        // imprimo lo que mando para verificar
+        NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
     
-    NSHTTPURLResponse* urlResponse = nil;
-    error = [[NSError alloc] init];
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-    NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSHTTPURLResponse* urlResponse = nil;
+        error = [[NSError alloc] init];
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
-    // imprimo el resultado del post para verificar
-    //NSLog(@"Response: %@", result);
-    //NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+        // imprimo el resultado del post para verificar
+        NSLog(@"Response: %@", result);
+        NSLog(@"Response: %ld", (long)urlResponse.statusCode);
     
-    //verifico que devuelve el servidor
-    if ((NSInteger)urlResponse.statusCode == 200){
-        //si existen los dos mails y los hace amigos, devuelvo la informacion del usuario escaneado
-        return srScanUser;
+        //verifico que devuelve el servidor
+        if ((NSInteger)urlResponse.statusCode == 200){
+            //si existen los dos mails y los hace amigos, devuelvo la informacion del usuario escaneado
+            return srScanUser;
+        }
+        
+        //me creo el objeto serverResponse cuando hubo error luego del addFriends
+        serverResponse * sr = [serverResponse alloc];
+        sr = [sr initialize :(NSInteger)urlResponse.statusCode :NULL :NULL :NULL :NULL :NULL :NULL :NULL];
+        return sr;
+        
     }
-    else{
-        //404
-        //si no existe el usuario scaneado y no los hace amigos, devuelvo null
-        return NULL;
-    }
+    
+    //me creo el objeto serverResponse cuando hubo error luego del escaneo
+    serverResponse * sr = [serverResponse alloc];
+    sr = [sr initialize :[srScanUser getCodigo] :NULL :NULL :NULL :NULL :NULL :NULL :NULL];
+    return sr;
     
 }
 
