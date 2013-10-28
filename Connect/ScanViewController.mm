@@ -75,7 +75,7 @@
         
         if ([sr getCodigo] == 200){
             //si se hacen amigos, paso de pantalla
-            [self performSegueWithIdentifier:@" connectSegue" sender:self];
+            [self performSegueWithIdentifier:@"connectSegue" sender:self];
         }
         else{
             //404, el usuraio no existe, no se pueden hacer amigos
