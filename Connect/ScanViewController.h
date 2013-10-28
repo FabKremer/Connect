@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "ZBarSDK.h"
 #import "ScanditSDKBarcodePicker.h"
 #import "ScanditSDKOverlayController.h"
+#import "serverResponse.h"
 
 @interface ScanViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate,ScanditSDKOverlayControllerDelegate>
 {
     ScanditSDKBarcodePicker *picker;
+    serverResponse * sr;
 }
 
 @property(nonatomic,retain) ScanditSDKBarcodePicker *picker;

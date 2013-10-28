@@ -9,6 +9,7 @@
 #import "ScanViewController.h"
 #import "serverResponse.h"
 #import "BackendProxy.h"
+#import "ConnectViewController.h"
 
 #define kScanditSDKAppKey    @"/Q44QDqYEeOfkoRnTkZF0Ie2RHLA2J2t8Cg92zgYL0I"
 
@@ -74,7 +75,7 @@
     else{
     
         //llamo a la funcion de BackendProxy para hacer amigos
-        serverResponse * sr = [BackendProxy addFriends:barcode];
+        sr = [BackendProxy addFriends:barcode];
         
         if ([sr getCodigo] == 200){
             //si se hacen amigos, paso de pantalla
@@ -114,6 +115,19 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+}
+
+//paso de valores entre views
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"connectSegue"])
+    {
+        // referencia de la view
+        ConnectViewController * vc = [segue destinationViewController];
+        
+        //seteo de variables
+        vc.scanUser = sr;
+    }
 }
 
 
