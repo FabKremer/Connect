@@ -355,7 +355,7 @@ NSString * server = @"developmentpis.azurewebsites.net";
         //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
         // imprimo lo que mando para verificar
-        NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+        //NSLog(@"%@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
     
         NSHTTPURLResponse* urlResponse = nil;
         error = [[NSError alloc] init];
@@ -363,13 +363,33 @@ NSString * server = @"developmentpis.azurewebsites.net";
         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
         // imprimo el resultado del post para verificar
-        NSLog(@"Response: %@", result);
-        NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+        //NSLog(@"Response: %@", result);
+        //NSLog(@"Response: %ld", (long)urlResponse.statusCode);
     
         //verifico que devuelve el servidor
         if ((NSInteger)urlResponse.statusCode == 200){
-            //si existen los dos mails y los hace amigos, devuelvo la informacion del usuario escaneado
-            return srScanUser;
+            //si existen los dos mails y los hace amigos, devuelvo la informacion devuelta por el server
+            
+            //paso el NSData que devuelve el servidor a un NSDictionary para agarrar los datos del JSON
+            NSError* error1;
+            NSDictionary* json = [NSJSONSerialization
+                                  JSONObjectWithData:responseData //1
+                                  options:kNilOptions
+                                  error:&error1];
+            
+            //agarro los datos del dictinary
+            NSString * userId = [json objectForKey:@"Id"];
+            NSString * userName = [json objectForKey:@"Name"];
+            NSString * userMail = [json objectForKey:@"Mail"];
+            NSString * userFacebook = [json objectForKey:@"FacebookId"];
+            NSString * useLinkedin = [json objectForKey:@"LinkedInId"];
+            
+            //me creo el objeto serverResponse
+            serverResponse * sr = [serverResponse alloc];
+            sr = [sr initialize :(NSInteger)urlResponse.statusCode :result :userId :userName : userMail :userFacebook :useLinkedin :@""];
+            
+            return sr;
+            
         }
         
         //me creo el objeto serverResponse cuando hubo error luego del addFriends

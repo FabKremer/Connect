@@ -138,7 +138,10 @@
         //agarro facebook y linkedin
         NSString * facebook = self.facebookID;
         NSString * linkedin = self.linkedinID;
-    
+        
+        //NSString * facebook = @"";
+        //NSString * linkedin = @"";
+        
         //llamo a la funcion de la clase BackendProxy
         serverResponse * sr = [BackendProxy enterUser :userName :userMail :facebook :linkedin :userPass];
     
