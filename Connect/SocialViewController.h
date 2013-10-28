@@ -22,7 +22,10 @@
     NSString * userName;
     NSString * userMail;
     NSString * userPass;
+    NSString * linkedinID;
+    NSString * facebookID;
 
+    
 }
 
 @property(nonatomic,retain) UIButton *loginFb;
@@ -35,6 +38,9 @@
 @property(nonatomic, retain) NSString * userName;
 @property(nonatomic, retain) NSString * userMail;
 @property(nonatomic, retain) NSString * userPass;
+
+@property(nonatomic, retain) NSString * linkedinID;
+@property(nonatomic, retain) NSString * facebookID;
 
 - (IBAction)fbClicked:(id)sender;
 

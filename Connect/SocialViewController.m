@@ -18,7 +18,7 @@
 
 @implementation SocialViewController
 
-@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView, userMail, userName, userPass;
+@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView, userMail, userName, userPass,facebookID,linkedinID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,12 +43,23 @@
         // we check here to make sure we have a token before calling open
         if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
             // even though we had a cached token, we need to login to make the session usable
-            [appDelegate.session openWithCompletionHandler:^(FBSession *session,
-                                                             FBSessionState status,
-                                                             NSError *error) {
-                // we recurse here, in order to update buttons and labels
-                [self.loginFb setEnabled:NO];
-            }];
+            [FBSession openActiveSessionWithPermissions:nil allowLoginUI:YES
+                                      completionHandler:^(FBSession *session,
+                                                          FBSessionState status,
+                                                          NSError *error) {
+                                          if (session.isOpen) {
+                                              appDelegate.session=session;
+                                              FBRequest *me = [FBRequest requestForMe];
+                                              [me startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                                                NSDictionary<FBGraphUser> *my,
+                                                                                NSError *error) {
+                                                  [self.loginFb setEnabled:NO];
+                                                  NSLog(@"id %@", my.id);
+                                                  self.facebookID = my.id;
+                                                  
+                                              }];
+                                          }
+                                      }];
         }
     }
 
@@ -75,41 +86,58 @@
         appDelegate.session = [[FBSession alloc] init];
     }
     
+
+    
     // if the session isn't open, let's open it now and present the login UX to the user
     [appDelegate.session openWithCompletionHandler:^(FBSession *session,
                                                      FBSessionState status,
                                                      NSError *error) {
         // and here we make sure to update our UX according to the new session state
-        [self.loginFb setEnabled:NO];
+        if(session.isOpen){
+            [FBSession openActiveSessionWithPermissions:nil allowLoginUI:YES
+                                      completionHandler:^(FBSession *session,
+                                                          FBSessionState status,
+                                                          NSError *error) {
+                                          if (session.isOpen) {
+                                              FBRequest *me = [FBRequest requestForMe];
+                                              [me startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                                                NSDictionary<FBGraphUser> *my,
+                                                                                NSError *error) {
+                                                  [self.loginFb setEnabled:NO];
+                                                  NSLog(@"id %@", my.id);
+                                                  self.facebookID = my.id;
+                                                  
+                                              }];
+                                          }
+                                      }];
+            
+
+        }
+        
     }];
+    
 
 }
 
 - (IBAction)continueClicked:(id)sender {
     if (![loginFb isEnabled]){}
-        //no esta habilitado entonces inicio sesion entonces le mando al servidor el id de facebook
-        //para eso tambien tengo que empezar a hacer rodar el spinner
-    
-    //por ahora hagamos que solo te vaya a la pantalla de inicio.
+
     [spinner setHidden:NO];
     [spinner startAnimating];
     [self performSelectorInBackground:@selector(processContinue) withObject:self];
 }
 
 -(void)processContinue{
-    
-    
+
     if (! [BackendProxy internetConnection]){
         //si no hay conexion con el server
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Register", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
-        NSLog(@"1");
     }
     else{
-        NSLog(@"2");
         //agarro facebook y linkedin
-        NSString * facebook = @"";
-        NSString * linkedin = @"";
+        NSString * facebook = self.facebookID;
+        NSString * linkedin = self.linkedinID;
     
         //llamo a la funcion de la clase BackendProxy
         serverResponse * sr = [BackendProxy enterUser :userName :userMail :facebook :linkedin :userPass];
@@ -117,9 +145,12 @@
         //comparo segun lo que me dio la funcion enterUser para ver como sigo
         if ([sr getCodigo] == 200){
             //paso de pantalla
-            [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
+            //paso de pantalla
+            [self performSelectorOnMainThread:@selector(finishedLoading) withObject:nil waitUntilDone:NO];
         }
         else{
+            //nunca deberia entrar aca!!
+            
             //410, el usuraio ya existe, el mail acaba de ser tomado
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Registration Failed", nil) message:NSLocalizedString(@"Mail just taken", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
@@ -135,18 +166,10 @@
     [spinner setHidden:YES];
 }
 
+-(void)finishedLoading{
+    [self performSegueWithIdentifier:@"shareSegueFR" sender:self];
 
-//- (IBAction)liClicked:(id)sender {
-//    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/113810631976867"];
-//    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
-//        [[UIApplication sharedApplication] openURL:facebookURL];
-//    } else {
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/mariarodriguez"]];
-//    }
-//
-//    
-//
-//}
+}
 
 - (IBAction)button_TouchUp:(UIButton *)sender
 {
@@ -213,7 +236,7 @@
             NSString * value = [[bits objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
             [kvPairs setObject:value forKey:key];
         }
-        
+        self.linkedinID=[kvPairs objectForKey:@"id"];
         NSLog(@"id = %@", [kvPairs objectForKey:@"id"]);
     }
     [self.loginLI setEnabled:NO];
