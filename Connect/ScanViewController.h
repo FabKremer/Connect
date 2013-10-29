@@ -15,8 +15,14 @@
 {
     ScanditSDKBarcodePicker *picker;
     serverResponse * sr;
+    
+    IBOutlet UIView *loadingView;
+    IBOutlet UIActivityIndicatorView *spinner;
+
 }
 
 @property(nonatomic,retain) ScanditSDKBarcodePicker *picker;
+@property(nonatomic,retain) UIView *loadingView;
+@property(nonatomic,retain) UIActivityIndicatorView *spinner;
 
 @end

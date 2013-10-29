@@ -14,7 +14,7 @@
 
 @implementation ConnectViewController
 
-@synthesize scanUser, table;
+@synthesize scanUser, table,name;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +31,9 @@
 	// Do any additional setup after loading the view.
     self.table.delegate=self;
     self.table.dataSource=self;
+    [self.table setAllowsSelection:YES];
+    self.name.text= [scanUser getName];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +53,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    int i=1;
+    if (![[scanUser getFacebook] isEqualToString:@""])//tiene facebook
+        i++;
+    if (![[scanUser getLinkedin] isEqualToString:@""])//tiene linkedin
+        i++;
+    
+    return i;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,17 +70,91 @@
         
     }
     
-    if (indexPath.row==0){//seteo lo del mail.
-        cell.textLabel.text=@"Send him a Mail";
-    }else if(indexPath.row==1){//seteo lo de facebook
-        cell.textLabel.text=@"Go to his Facebook Profile";
-    }else if (indexPath.row==2){//seteo lo de linkedin
-        cell.textLabel.text=@"Go to his Linkedin Profile";
+    if ([[scanUser getFacebook] isEqualToString:@""] && [[scanUser getLinkedin] isEqualToString:@""]){
+        //tiene solo mail
+        if (indexPath.row==0){//seteo lo del mail.
+            cell.textLabel.text=@"Connect via Mail";
+        }
+
+    }
+    else if ([[scanUser getFacebook] isEqualToString:@""] && ![[scanUser getLinkedin] isEqualToString:@""]){
+        //no tiene facebook
+        if (indexPath.row==0){//seteo lo del mail.
+            cell.textLabel.text=@"Connect via Mail";
+        }else if (indexPath.row==1){//seteo lo de linkedin
+            cell.textLabel.text=@"Connect via Linkedin";
+        }
+
+    }
+    else if (![[scanUser getFacebook] isEqualToString:@""] && [[scanUser getLinkedin] isEqualToString:@""]){
+        //no tiene linkedin
+        if (indexPath.row==0){//seteo lo del mail.
+            cell.textLabel.text=@"Connect via Mail";
+        }else if(indexPath.row==1){//seteo lo de facebook
+            cell.textLabel.text=@"Connect via Facebook";
+        }
+    }
+    else{
+        //tiene todo
+        if (indexPath.row==0){//seteo lo del mail.
+            cell.textLabel.text=@"Connect via Mail";
+        }else if(indexPath.row==1){//seteo lo de facebook
+            cell.textLabel.text=@"Connect via Facebook";
+        }else if (indexPath.row==2){//seteo lo de linkedin
+            cell.textLabel.text=@"Connect via Linkedin";
+        }
+
     }
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;    return cell;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[scanUser getFacebook] isEqualToString:@""] && [[scanUser getLinkedin] isEqualToString:@""]){
+        //tiene solo mail
+        if (indexPath.row==0){//mail.
+            
+        }
+        
+    }
+    else if ([[scanUser getFacebook] isEqualToString:@""] && ![[scanUser getLinkedin] isEqualToString:@""]){
+        //no tiene facebook
+        if (indexPath.row==0){//mail.
+            
+        }else if (indexPath.row==1){//linkedin
+            NSString *path= [NSString stringWithFormat:@"http://www.linkedin.com/profile/view?id=%@&authType=name&authToken=b86X&goback=%2Enmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=nmp_rec_act_profile_photo",[scanUser getLinkedin]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
+        }
+        
+    }
+    else if (![[scanUser getFacebook] isEqualToString:@""] && [[scanUser getLinkedin] isEqualToString:@""]){
+        //no tiene linkedin
+        if (indexPath.row==0){//mail.
+            
+        }else if(indexPath.row==1){//facebook
+            NSString *path= [NSString stringWithFormat:@"http://facebook.com/%@",[scanUser getFacebook]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
+        }
+    }
+    else{
+        //tiene todo
+        if (indexPath.row==0){//mail.
+            //cell.textLabel.text=@"Connect via Mail";
+        }else if(indexPath.row==1){//facebook
+            NSString *path= [NSString stringWithFormat:@"http://facebook.com/%@",[scanUser getFacebook]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
 
+        }else if (indexPath.row==2){//linkedin
+            NSString *path= [NSString stringWithFormat:@"http://www.linkedin.com/profile/view?id=%@&authType=name&authToken=b86X&goback=%2Enmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=nmp_rec_act_profile_photo",[scanUser getLinkedin]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
+
+        }
+        
+    }
+    
+}
 
 @end

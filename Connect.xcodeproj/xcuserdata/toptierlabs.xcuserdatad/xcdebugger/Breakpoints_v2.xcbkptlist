@@ -303,7 +303,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
             endingLineNumber = "225"
-            landmarkName = "-profileApiCall"
+            landmarkName = "-profileApiCallResult:didFinish:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -358,47 +358,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Connect/ScanViewController.mm"
-            timestampString = "404621937.489182"
+            filePath = "Connect/ConnectViewController.m"
+            timestampString = "404699736.7067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-scanditSDKOverlayController:didScanBarcode:"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ScanViewController scanditSDKOverlayController:didScanBarcode:]"
-                  moduleName = "Connect"
-                  urlString = "file://localhost/Users/toptierlabs/Desktop/PIS/Connect/Connect/ScanViewController.mm"
-                  timestampString = "404672790.510406"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "974">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ScanViewController scanditSDKOverlayController:didScanBarcode:]"
-                  moduleName = "Connect"
-                  urlString = "file://localhost/Users/toptierlabs/Desktop/PIS/Connect/Connect/ScanViewController.mm"
-                  timestampString = "404672790.510783"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1782">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

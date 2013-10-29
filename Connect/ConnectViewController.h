@@ -12,10 +12,14 @@
 @interface ConnectViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
     IBOutlet UITableView *table;
+    IBOutlet UILabel *name;
     serverResponse * scanUser;
+    
 }
 
 @property(nonatomic,retain) UITableView *table;
+@property(nonatomic,retain) UILabel *name;
+
 @property(nonatomic,retain) serverResponse * scanUser;
 
 @end

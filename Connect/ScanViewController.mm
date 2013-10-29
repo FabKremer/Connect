@@ -19,7 +19,7 @@
 
 @implementation ScanViewController
 
-@synthesize picker;
+@synthesize picker,spinner,loadingView;
 
 - (void)viewDidLoad
 {
@@ -35,6 +35,11 @@
 	[picker startScanning];
     
     [self.view addSubview:picker.view];
+    [self.loadingView setHidden:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.picker startScanning];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,42 +56,52 @@
 - (void)scanditSDKOverlayController:(ScanditSDKOverlayController *)scanditSDKOverlayController1
                      didScanBarcode:(NSDictionary *)barcodeResult {
 	
-	//[picker stopScanningAndKeepTorchState];
-	
-//    NSString *symbology = [barcodeResult objectForKey:@"symbology"];
-    
+    //empiezo a correr el spinner
+    [self.loadingView setHidden:NO];
+    [self.view bringSubviewToFront:self.loadingView];
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.picker stopScanning];
+    NSString *barcode = [barcodeResult objectForKey:@"barcode"];
+    [self performSelectorInBackground:@selector(processConnection:) withObject:barcode];
+
+}
+
+-(void)processConnection:(NSString*)barcode{
     //esto es lo que saco del escanner
-	NSString *barcode = [barcodeResult objectForKey:@"barcode"];
-    
-//    UIAlertView *alert = [[UIAlertView alloc]
-//						  initWithTitle:[NSString stringWithFormat:@"Scanned %@", symbology]
-//						  message:barcode
-//						  delegate:self
-//						  cancelButtonTitle:@"OK"
-//					      otherButtonTitles:nil];
-//	[alert show];
-    
-    
     if (! [BackendProxy internetConnection]){
         //si no hay conexion con el server
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Connect", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
     else{
-    
+        
         //llamo a la funcion de BackendProxy para hacer amigos
         sr = [BackendProxy addFriends:barcode];
         
         if ([sr getCodigo] == 200){
             //si se hacen amigos, paso de pantalla
-            [self performSegueWithIdentifier:@"connectSegue" sender:self];
+            [self performSelectorOnMainThread:@selector(finishScan) withObject:nil waitUntilDone:NO];
         }
-        else{
+        else if ([sr getCodigo] == 404){
             //404, el usuraio no existe, no se pueden hacer amigos
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"User does not exist", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"An unexpected error happened", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+
         }
     }
+    
+    [self.loadingView setHidden:YES];
+    [self.spinner stopAnimating];
+
+
+}
+
+-(void)finishScan{
+    [self performSegueWithIdentifier:@"connectSegue" sender:self];
 
 }
 
