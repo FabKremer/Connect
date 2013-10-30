@@ -9,7 +9,7 @@
 #import "BackendProxy.h"
 #import "Reachability.h"
 
-NSString * server = @"testingpis.azurewebsites.net";
+NSString * server = @"developmentpis.azurewebsites.net";
 
 @implementation BackendProxy
 
