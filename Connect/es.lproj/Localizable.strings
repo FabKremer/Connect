@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Connect
+
+  Created by TopTier labs on 9/28/13.
+  Copyright (c) 2013 PIS. All rights reserved.
+*/
+
+"Full Name" = "Nombre Completo";
+"Password" = "Contraseña";
+"Basic Information" = "Información basica";
+"Set What To Share" = "Elige que compartir";
+"Mail already taken" = "Mail ya registrado";
+"Passwords doesn't match" = "Las contraseñas no coinciden";
+"Invalid Mail" = "Mail invalido";
+"Complete all the fields to login" = "Debes completar todos los campos";
+"Complete all the fields to register" = "Debes completar todos los campos";
+"Invalid Mail and/or Password" = "Mail y/o contraseña invalidos";
+"Password too short" = "Contraseña muy corta";
+"No Internet Connection Login" = "Debes tener internet para iniciar sesión. Chequea la conexión a internet y vuelve a intentarlo.";
+"No Internet Connection Register" = "Debes tener internet para registrarte. Chequea la conexión a internet y vuelve a intentarlo.";
+"No Internet Connection Connect" = "Debes tener internet para conectarte. Chequea la conexión a internet y vuelve a intentarlo.";
+"Connection Failed" = "La conexión falló";
+"Cancel" = "Cancelar";
+"Logout" = "Cerrar Sesión";
+"Registration Failed" = "El registro falló";
+"Mail just taken" = "El mail ya está registrado";
+"Connect Failed" = "Connect falló";
+"User does not exist" = "El usuario no existe";
+"The QR may not be a Connect User" = "El QR leido no es de un usuario de Connect";
+"Connect via Linkedin"="Conectarse via Linkedin";
+"Connect via Facebook"="Conectarse via Facebook";

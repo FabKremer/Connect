@@ -54,7 +54,7 @@
     // Return the number of rows in the section.
     NSInteger i;
     if (section==0)
-        i=1;
+        i=2;
     else
         i=2;
     
@@ -68,13 +68,33 @@
         cell = [[UITableViewCell alloc] init ];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    
     if (indexPath.section==0){
         if(indexPath.row==0){
-            cell.textLabel.text=@"My Account";
-            UITextField *name = [[UITextField alloc] initWithFrame:CGRectZero];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            [name addTarget:self action:@selector(caca:) forControlEvents:UIControlEventEditingDidEnd];
+            cell.textLabel.text=@"Name:";
+            cell.textLabel.font= [UIFont fontWithName:@"System Bold" size:14.0];
+            CGRect lFrame = CGRectMake(cell.frame.size.width - 240, 0, 200, cell.frame.size.height);
+            UILabel *lbl1 = [[UILabel alloc]initWithFrame:lFrame];
+            [lbl1 setFont:[UIFont fontWithName:@"FontName" size:12.0]];
+            [lbl1 setTextColor:[UIColor grayColor]];
+            lbl1.text = [defaults objectForKey:@"name"];
+            [cell addSubview:lbl1];
+            
         }
+        else if(indexPath.row==1){
+            cell.textLabel.text=@"Mail:";
+            cell.textLabel.font= [UIFont fontWithName:@"System Bold" size:14.0];
+            CGRect lFrame = CGRectMake(cell.frame.size.width - 250, 0, 200, cell.frame.size.height);
+            UILabel *lbl1 = [[UILabel alloc]initWithFrame:lFrame];
+            [lbl1 setFont:[UIFont fontWithName:@"FontName" size:12.0]];
+            [lbl1 setTextColor:[UIColor grayColor]];
+            lbl1.text = [defaults objectForKey:@"mail"];
+            [cell addSubview:lbl1];
+        }
+
         
     }
     else{

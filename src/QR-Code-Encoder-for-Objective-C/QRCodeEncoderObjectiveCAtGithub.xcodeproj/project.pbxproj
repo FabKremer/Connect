@@ -58,6 +58,8 @@
 		9672D36813BD665E0002B0E2 /* QREncoder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QREncoder-Prefix.pch"; sourceTree = "<group>"; };
 		9672D36913BD665E0002B0E2 /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QREncoder.h; sourceTree = "<group>"; };
 		9672D36A13BD665E0002B0E2 /* QREncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QREncoder.mm; sourceTree = "<group>"; };
+		9BA50D971820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/ViewController.xib; sourceTree = "<group>"; };
+		9BA50D981820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA798DC2FBEDAA5AD45A414E /* QRCodeEncoderDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QRCodeEncoderDemoViewController.mm; sourceTree = "<group>"; };
 		BA798FF97165E01902D180BF /* QRCodeEncoderDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeEncoderDemoViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9621844C15431DBA00447877 /* en */,
+				9BA50D981820A86B0079E9F5 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9621845815431DBA00447877 /* en */,
+				9BA50D971820A86B0079E9F5 /* es */,
 			);
 			name = ViewController.xib;
 			sourceTree = "<group>";

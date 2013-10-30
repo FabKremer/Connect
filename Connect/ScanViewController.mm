@@ -87,9 +87,14 @@
             //404, el usuraio no existe, no se pueden hacer amigos
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"User does not exist", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
+            [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
+
+
+ 
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"An unexpected error happened", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"The QR may not be a Connect User", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
+            [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
 
         }
     }
@@ -103,6 +108,11 @@
 -(void)finishScan{
     [self performSegueWithIdentifier:@"connectSegue" sender:self];
 
+}
+
+-(void)failedScan{
+    [NSThread sleepForTimeInterval:2.0f];
+    [self.picker startScanning];
 }
 
 /**

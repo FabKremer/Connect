@@ -94,6 +94,9 @@ NSString * server = @"developmentpis.azurewebsites.net";
         //*****************
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:userId forKey:@"id"];
+        [defaults setObject:userMail forKey:@"mail"];
+        [defaults setObject:userName forKey:@"name"];
+
         
         return sr;
     }
@@ -176,6 +179,8 @@ NSString * server = @"developmentpis.azurewebsites.net";
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:userId forKey:@"id"];
+        [defaults setObject:userMail forKey:@"mail"];
+        [defaults setObject:userName forKey:@"name"];
         
         
         return sr;

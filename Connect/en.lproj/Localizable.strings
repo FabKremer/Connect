@@ -27,3 +27,6 @@
 "Mail just taken" = "The mail has just been taken";
 "Connect Failed" = "Connect Failed";
 "User does not exist" = "The user does not exist";
+"The QR may not be a Connect User" = "The QR may not be a Connect User";
+"Connect via Linkedin"="Connect via Linkedin";
+"Connect via Facebook"="Connect via Facebook";

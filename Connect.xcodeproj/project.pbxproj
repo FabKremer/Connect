@@ -28,6 +28,9 @@
 		9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */; };
 		9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */; };
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
+		9BA50D921820A69C0079E9F5 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA50D8F1820A69C0079E9F5 /* 19-gear.png */; };
+		9BA50D931820A69C0079E9F5 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA50D901820A69C0079E9F5 /* 117-todo.png */; };
+		9BA50D941820A69C0079E9F5 /* 184-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA50D911820A69C0079E9F5 /* 184-warning.png */; };
 		9BA5E2DD181D58D300CA702D /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5E2AC181D58D300CA702D /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BA5E2DE181D58D300CA702D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5E2AE181D58D300CA702D /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BA5E2DF181D58D300CA702D /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5E2B0181D58D300CA702D /* NSURL+Base.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -162,6 +165,14 @@
 		9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QRCodeEncoderObjectiveCAtGithub.xcodeproj; path = "src/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub.xcodeproj"; sourceTree = "<group>"; };
+		9BA50D8F1820A69C0079E9F5 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
+		9BA50D901820A69C0079E9F5 /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "117-todo.png"; sourceTree = "<group>"; };
+		9BA50D911820A69C0079E9F5 /* 184-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "184-warning.png"; sourceTree = "<group>"; };
+		9BA50D961820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/scanditsdk.strings; sourceTree = "<group>"; };
+		9BA50D991820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9BA50D9A1820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9BA50D9B1820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BA50D9C1820A86B0079E9F5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BA5E2AB181D58D300CA702D /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		9BA5E2AC181D58D300CA702D /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		9BA5E2AD181D58D300CA702D /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -412,6 +423,9 @@
 				9B0C4D2317F6874000BF3EDD /* qricon.jpeg */,
 				9B2B165217EE2C0600C8B943 /* inicon.jpeg */,
 				9B2B165317EE2C0600C8B943 /* fbicon.jpeg */,
+				9BA50D8F1820A69C0079E9F5 /* 19-gear.png */,
+				9BA50D901820A69C0079E9F5 /* 117-todo.png */,
+				9BA50D911820A69C0079E9F5 /* 184-warning.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -663,9 +677,11 @@
 				9B2B165417EE2C0600C8B943 /* inicon.jpeg in Resources */,
 				9B2B165517EE2C0600C8B943 /* fbicon.jpeg in Resources */,
 				9BA5E2E4181D58D300CA702D /* linkedInBluebutton-highlight.png in Resources */,
+				9BA50D921820A69C0079E9F5 /* 19-gear.png in Resources */,
 				9BA620811815DCB3003AE614 /* flashlight-turn-on-icon-pressed@2x.png in Resources */,
 				9BA6207A1815DCB3003AE614 /* scanditsdk.strings in Resources */,
 				9BA620861815DCB3003AE614 /* poweredby.png in Resources */,
+				9BA50D941820A69C0079E9F5 /* 184-warning.png in Resources */,
 				9BA620791815DCB3003AE614 /* CHANGELOG.txt in Resources */,
 				9BA620741815DCB3003AE614 /* beep.wav in Resources */,
 				9BA620771815DCB3003AE614 /* camera-swap-icon.png in Resources */,
@@ -674,6 +690,7 @@
 				9BA620801815DCB3003AE614 /* flashlight-turn-on-icon-pressed.png in Resources */,
 				9BA5E2F5181D58D300CA702D /* ProfileTabView.xib in Resources */,
 				9BA5E2E5181D58D300CA702D /* linkedInBluebutton.png in Resources */,
+				9BA50D931820A69C0079E9F5 /* 117-todo.png in Resources */,
 				9BA620871815DCB3003AE614 /* poweredby@2x.png in Resources */,
 				9BA620751815DCB3003AE614 /* camera-swap-icon-pressed.png in Resources */,
 				9BA620821815DCB3003AE614 /* flashlight-turn-on-icon.png in Resources */,
@@ -763,6 +780,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B2B162017EE280D00C8B943 /* en */,
+				9BA50D9B1820A86B0079E9F5 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -771,6 +789,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B2B162F17EE280D00C8B943 /* en */,
+				9BA50D991820A86B0079E9F5 /* es */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -780,6 +799,7 @@
 			children = (
 				9BA620631815DCB3003AE614 /* de */,
 				9BA620651815DCB3003AE614 /* en */,
+				9BA50D961820A86B0079E9F5 /* es */,
 			);
 			name = scanditsdk.strings;
 			sourceTree = "<group>";
@@ -788,6 +808,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9BA68F4F17F7342D0041482C /* en */,
+				9BA50D9A1820A86B0079E9F5 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -796,6 +817,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EFB2F34D17FA2B460089DF48 /* en */,
+				9BA50D9C1820A86B0079E9F5 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
