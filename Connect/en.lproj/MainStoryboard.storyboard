@@ -74,16 +74,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="qr.png" id="Ba8-l3-FTI"/>
                     <navigationItem key="navigationItem" title="Share" id="Ljp-a1-9tu">
-                        <barButtonItem key="rightBarButtonItem" image="19-gear.png" style="plain" id="SOg-ec-adc">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" style="plain" id="SOg-ec-adc">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="dQV-Oc-mAM" kind="push" id="3Wh-dT-mhc"/>
+                                <action selector="logoutClicked:" destination="2" id="QrQ-qo-c7o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="QRImage" destination="Qy5-EO-728" id="zPQ-N9-rTB"/>
+                        <segue destination="JDP-Rj-uJS" kind="modal" identifier="logoutSegue" modalTransitionStyle="crossDissolve" id="8kp-LJ-Ay6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -178,12 +179,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oEh-Ne-X0d">
+                                <rect key="frame" x="0.0" y="430" width="84" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tPF-aN-8sG">
+                                <rect key="frame" x="81" y="430" width="225" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Connect" id="4dZ-El-9AS"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="mail" destination="tPF-aN-8sG" id="hIb-ln-2N9"/>
                         <outlet property="name" destination="yEW-mW-udC" id="ZIm-uX-qs4"/>
                         <outlet property="table" destination="0dL-ri-aEu" id="RzV-MH-l2t"/>
                     </connections>
@@ -262,6 +279,7 @@
         <scene sceneID="0aA-pb-VJe">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="JDP-Rj-uJS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LJ5-ZN-VHz"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xir-nv-PKR">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
@@ -316,13 +334,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connect!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oNx-Xc-z83">
-                                <rect key="frame" x="42" y="36" width="237" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ajh-PD-jbS">
                                 <rect key="frame" x="13" y="290" width="294" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
@@ -389,6 +400,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoConnect!.png" id="UFg-F7-7cP">
+                                <rect key="frame" x="21" y="49" width="265" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -597,6 +613,18 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dHV-fD-g7c">
+                                        <rect key="frame" x="9" y="24" width="71" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancel:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="bDK-kT-1DS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                             </view>
@@ -606,7 +634,7 @@
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5R9-e8-11D">
-                                <rect key="frame" x="96" y="107" width="129" height="30"/>
+                                <rect key="frame" x="81" y="110" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login to Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -616,7 +644,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gjv-Oy-DJ6">
-                                <rect key="frame" x="101" y="189" width="118" height="30"/>
+                                <rect key="frame" x="86" y="188" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login to Linkedin">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -625,6 +653,15 @@
                                     <action selector="button_TouchUp:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="LO4-vk-dCf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="117-todo.png" id="evp-4i-U4q">
+                                <rect key="frame" x="235" y="112" width="32" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="117-todo.png" id="vaq-vs-eAr">
+                                <rect key="frame" x="235" y="190" width="32" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -632,6 +669,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnContinue" destination="X4S-yS-M9U" id="QsN-DJ-lwx"/>
+                        <outlet property="fbtick" destination="evp-4i-U4q" id="5sL-P2-KPg"/>
+                        <outlet property="litick" destination="vaq-vs-eAr" id="9sn-Gd-m2A"/>
                         <outlet property="loginFb" destination="5R9-e8-11D" id="Gc9-x2-YHH"/>
                         <outlet property="loginLI" destination="gjv-Oy-DJ6" id="raQ-Au-ghg"/>
                         <outlet property="spinner" destination="PCk-pm-mNc" id="B9h-zY-aRU"/>
@@ -683,10 +722,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="19-gear.png" width="26" height="26"/>
+        <image name="117-todo.png" width="18" height="19"/>
         <image name="camera.png" width="34" height="26"/>
-        <image name="camera.png" width="34" height="26"/>
-        <image name="qr.png" width="30" height="30"/>
+        <image name="logoConnect!.png" width="250" height="80"/>
         <image name="qr.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -697,5 +735,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="qEk-MQ-pkt"/>
         <segue reference="xaI-Jm-D3G"/>
+        <segue reference="8kp-LJ-Ay6"/>
     </inferredMetricsTieBreakers>
 </document>

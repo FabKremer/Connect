@@ -19,6 +19,9 @@
     IBOutlet UIActivityIndicatorView *spinner;
     IBOutlet UIButton *btnContinue;
     IBOutlet UIButton *loginLI;
+    IBOutlet UIButton *btncancel;
+    IBOutlet UIImageView *fbtick;
+    IBOutlet UIImageView *litick;
     NSString * userName;
     NSString * userMail;
     NSString * userPass;
@@ -31,6 +34,10 @@
 @property(nonatomic,retain) UIButton *loginFb;
 @property(nonatomic,retain) UIButton *loginLI;
 @property(nonatomic,retain) UIButton *btnContinue;
+@property(nonatomic,retain) UIButton *btncancel;
+
+@property(nonatomic,retain) UIImageView *fbtick;
+@property(nonatomic,retain) UIImageView *litick;
 
 @property(nonatomic,retain) UIActivityIndicatorView *spinner;
 @property(nonatomic, retain) OAuthLoginView *oAuthLoginView;
@@ -45,8 +52,9 @@
 - (IBAction)fbClicked:(id)sender;
 
 - (IBAction)continueClicked:(id)sender;
-
 - (IBAction)button_TouchUp:(UIButton *)sender;
+
+- (IBAction)cancel:(UIButton *)sender;
 - (void)profileApiCall;
 - (void)networkApiCall;
 

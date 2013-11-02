@@ -8,6 +8,7 @@
 
 #import "ShareViewController.h"
 #import <QRCodeEncoderObjectiveCAtGithub/QREncoder.h>
+#import "AppDelegate.h"
 
 @interface ShareViewController ()
 
@@ -61,5 +62,41 @@
     [self performSegueWithIdentifier:@"settingsSegue" sender:self];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"logoutSegue"]){
+        //borro todo lo persistido
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+        AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        
+        // this button's job is to flip-flop the session from open to closed
+        if (appDelegate.session.isOpen) {
+            // if a user logs out explicitly, we delete any cached token information, and next
+            // time they run the applicaiton they will be presented with log in UX again; most
+            // users will simply close the app or switch away, without logging out; this will
+            // cause the implicit cached-token login to occur on next launch of the application
+            [appDelegate.session closeAndClearTokenInformation];
+            
+        }
+    }
+    
+}
+
+-(IBAction)logoutClicked:(id)sender{
+    // Create the action sheet
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                         destructiveButtonTitle:NSLocalizedString(@"Logout", nil)
+                                              otherButtonTitles:nil];
+    [sheet showInView:self.view];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+    }
+}
 
 @end

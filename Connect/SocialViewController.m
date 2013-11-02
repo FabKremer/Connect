@@ -18,7 +18,7 @@
 
 @implementation SocialViewController
 
-@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView, userMail, userName, userPass,facebookID,linkedinID;
+@synthesize loginFb,spinner,btnContinue,loginLI,oAuthLoginView, userMail, userName, userPass,facebookID,linkedinID,btncancel,litick,fbtick;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,39 +34,40 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    if (!appDelegate.session.isOpen) {
-        // create a fresh session object
-        appDelegate.session = [[FBSession alloc] init];
-        
-        // if we don't have a cached token, a call to open here would cause UX for login to
-        // occur; we don't want that to happen unless the user clicks the login button, and so
-        // we check here to make sure we have a token before calling open
-        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
-            // even though we had a cached token, we need to login to make the session usable
-            [FBSession openActiveSessionWithPermissions:nil allowLoginUI:YES
-                                      completionHandler:^(FBSession *session,
-                                                          FBSessionState status,
-                                                          NSError *error) {
-                                          if (session.isOpen) {
-                                              appDelegate.session=session;
-                                              FBRequest *me = [FBRequest requestForMe];
-                                              [me startWithCompletionHandler: ^(FBRequestConnection *connection,
-                                                                                NSDictionary<FBGraphUser> *my,
-                                                                                NSError *error) {
-                                                  [self.loginFb setEnabled:NO];
-                                                  NSLog(@"id %@", my.id);
-                                                  self.facebookID = my.id;
-                                                  
-                                              }];
-                                          }
-                                      }];
-        }
-    }
+//    if (!appDelegate.session.isOpen) {
+//        // create a fresh session object
+//        appDelegate.session = [[FBSession alloc] init];
+//        
+//        // if we don't have a cached token, a call to open here would cause UX for login to
+//        // occur; we don't want that to happen unless the user clicks the login button, and so
+//        // we check here to make sure we have a token before calling open
+//        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
+//            // even though we had a cached token, we need to login to make the session usable
+//            [FBSession openActiveSessionWithPermissions:nil allowLoginUI:YES
+//                                      completionHandler:^(FBSession *session,
+//                                                          FBSessionState status,
+//                                                          NSError *error) {
+//                                          if (session.isOpen) {
+//                                              appDelegate.session=session;
+//                                              FBRequest *me = [FBRequest requestForMe];
+//                                              [me startWithCompletionHandler: ^(FBRequestConnection *connection,
+//                                                                                NSDictionary<FBGraphUser> *my,
+//                                                                                NSError *error) {
+//                                                  [self.loginFb setEnabled:NO];
+//                                                  NSLog(@"id %@", my.id);
+//                                                  self.facebookID = my.id;
+//                                                  
+//                                              }];
+//                                          }
+//                                      }];
+//        }
+//    }
 
     btnContinue.clipsToBounds = YES;
     btnContinue.layer.cornerRadius = 15.0f;
     [spinner setHidden:YES];
-
+    [litick setHidden:YES];
+    [fbtick setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,6 +105,7 @@
                                                                                 NSDictionary<FBGraphUser> *my,
                                                                                 NSError *error) {
                                                   [self.loginFb setEnabled:NO];
+                                                  [fbtick setHidden:NO];
                                                   NSLog(@"id %@", my.id);
                                                   self.facebookID = my.id;
                                                   
@@ -228,7 +230,7 @@
     
     NSDictionary *profile = [responseBody objectFromJSONString];
     
-    if ( profile )
+    if ( [[profile valueForKey:@"status"] integerValue]!= 404 )
     {
         NSDictionary *a =[profile objectForKey:@"siteStandardProfileRequest"];
         NSString *url = [a objectForKey:@"url"];
@@ -241,10 +243,12 @@
             NSString * value = [[bits objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
             [kvPairs setObject:value forKey:key];
         }
-        self.linkedinID=[kvPairs objectForKey:@"id"];
+        self.linkedinID=url;//[kvPairs objectForKey:@"id"]
         NSLog(@"id = %@", [kvPairs objectForKey:@"id"]);
+        [self.loginLI setEnabled:NO];
+        [litick setHidden:NO];
     }
-    [self.loginLI setEnabled:NO];
+    
     // The next thing we want to do is call the network updates
     //[self networkApiCall];
     
@@ -293,6 +297,12 @@
 - (void)networkApiCallResult:(OAServiceTicket *)ticket didFail:(NSData *)error
 {
     NSLog(@"%@",[error description]);
+}
+
+-(IBAction)cancel:(id)sender{
+    UINavigationController * navigationController = self.navigationController;
+    [navigationController popToRootViewControllerAnimated:YES];
+    
 }
 
 

@@ -75,27 +75,36 @@
         [alert show];
     }
     else{
-        
-        //llamo a la funcion de BackendProxy para hacer amigos
-        sr = [BackendProxy addFriends:barcode];
-        
-        if ([sr getCodigo] == 200){
-            //si se hacen amigos, paso de pantalla
-            [self performSelectorOnMainThread:@selector(finishScan) withObject:nil waitUntilDone:NO];
-        }
-        else if ([sr getCodigo] == 404){
-            //404, el usuraio no existe, no se pueden hacer amigos
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString * user = [defaults stringForKey:@"id"];
+        if ([barcode isEqualToString:user]){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"User does not exist", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
             [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
 
-
- 
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"The QR may not be a Connect User", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
-            [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
+            //llamo a la funcion de BackendProxy para hacer amigos
+            sr = [BackendProxy addFriends:barcode];
+            
 
+            if ([sr getCodigo] == 200){
+                //si se hacen amigos, paso de pantalla
+                [self performSelectorOnMainThread:@selector(finishScan) withObject:nil waitUntilDone:NO];
+            }
+            else if ([sr getCodigo] == 404){
+                //404, el usuraio no existe, no se pueden hacer amigos
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"User does not exist", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+                [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
+
+
+     
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connect Failed", nil) message:NSLocalizedString(@"The QR may not be a Connect User", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+                [self performSelectorOnMainThread:@selector(failedScan) withObject:nil waitUntilDone:NO];
+
+            }
         }
     }
     

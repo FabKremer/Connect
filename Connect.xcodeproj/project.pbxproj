@@ -26,6 +26,7 @@
 		9B2B165517EE2C0600C8B943 /* fbicon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B165317EE2C0600C8B943 /* fbicon.jpeg */; };
 		9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */; };
 		9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */; };
+		9B682E0D18243712005F80ED /* logoConnect!.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B682E0C18243712005F80ED /* logoConnect!.png */; };
 		9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */; };
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
 		9BA50D921820A69C0079E9F5 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA50D8F1820A69C0079E9F5 /* 19-gear.png */; };
@@ -162,6 +163,7 @@
 		9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9B682E0C18243712005F80ED /* logoConnect!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoConnect!.png"; sourceTree = "<group>"; };
 		9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9BA1A15617EFCEF30071F73C /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QRCodeEncoderObjectiveCAtGithub.xcodeproj; path = "src/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub.xcodeproj"; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		9B2B164517EE293900C8B943 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9B682E0C18243712005F80ED /* logoConnect!.png */,
 				9BAA542B18030A2E00785373 /* qr.png */,
 				9BAA542D18030A8200785373 /* camera.png */,
 				9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */,
@@ -693,6 +696,7 @@
 				9BA50D931820A69C0079E9F5 /* 117-todo.png in Resources */,
 				9BA620871815DCB3003AE614 /* poweredby@2x.png in Resources */,
 				9BA620751815DCB3003AE614 /* camera-swap-icon-pressed.png in Resources */,
+				9B682E0D18243712005F80ED /* logoConnect!.png in Resources */,
 				9BA620821815DCB3003AE614 /* flashlight-turn-on-icon.png in Resources */,
 				9BA6207E1815DCB3003AE614 /* flashlight-turn-off-icon.png in Resources */,
 			);
@@ -878,7 +882,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Marcelo Guerra Hahn (CM7YU4BW25)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

@@ -14,7 +14,7 @@
 
 @implementation ConnectViewController
 
-@synthesize scanUser, table,name;
+@synthesize scanUser, table,name,mail;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +33,7 @@
     self.table.dataSource=self;
     [self.table setAllowsSelection:YES];
     self.name.text= [scanUser getName];
+    self.mail.text= [scanUser getMail];
     
 }
 
@@ -61,6 +62,10 @@
     
     if (i==1){
         CGRect tFrame = CGRectMake(table.frame.origin.x, table.frame.origin.y, table.frame.size.width, 80.0f);
+        table.frame=tFrame;
+    }
+    if (i==0){
+        CGRect tFrame = CGRectMake(table.frame.origin.x, table.frame.origin.y, table.frame.size.width, 0.0f);
         table.frame=tFrame;
     }
     return i;
@@ -129,7 +134,7 @@
         if (indexPath.row==48984){//mail.
             
         }else if (indexPath.row==0){//linkedin
-            NSString *path= [NSString stringWithFormat:@"http://www.linkedin.com/profile/view?id=%@&authType=name&authToken=b86X&goback=%2Enmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=nmp_rec_act_profile_photo",[scanUser getLinkedin]];
+            NSString *path= [scanUser getLinkedin];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
         }
         
@@ -152,7 +157,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
 
         }else if (indexPath.row==1){//linkedin
-            NSString *path= [NSString stringWithFormat:@"http://www.linkedin.com/profile/view?id=%@&authType=name&authToken=b86X&goback=%2Enmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=nmp_rec_act_profile_photo",[scanUser getLinkedin]];
+            NSString *path= [scanUser getLinkedin];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
 
         }

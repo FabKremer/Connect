@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShareViewController : UIViewController{
+@interface ShareViewController : UIViewController <UIActionSheetDelegate>{
     IBOutlet UIButton *btnBack;
     IBOutlet UIButton *btnSettings;
     IBOutlet UIImageView *QRImage;
@@ -24,5 +24,6 @@
 
 -(IBAction)back:(id)sender;
 -(IBAction)settings:(id)sender;
+-(IBAction)logoutClicked:(id)sender;
 
 @end
