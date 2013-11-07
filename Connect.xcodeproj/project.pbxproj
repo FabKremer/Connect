@@ -81,6 +81,12 @@
 		9BA620901815EC83003AE614 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA6208F1815EC82003AE614 /* libc++.dylib */; };
 		9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5017F7342D0041482C /* Localizable.strings */; };
 		9BA68F5817F73CA20041482C /* 4304932707_e07e0fe53c_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */; };
+		9BA9B83E182B06DF001103D6 /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B83C182B06DF001103D6 /* linkedin.png */; };
+		9BA9B83F182B06DF001103D6 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B83D182B06DF001103D6 /* facebook.png */; };
+		9BA9B842182B0879001103D6 /* facebookout.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B840182B0879001103D6 /* facebookout.png */; };
+		9BA9B843182B0879001103D6 /* linkedinout.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B841182B0879001103D6 /* linkedinout.png */; };
+		9BA9B847182B0CFC001103D6 /* facebook2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B846182B0CFC001103D6 /* facebook2.png */; };
+		9BA9B849182B0D3B001103D6 /* linkedin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9B848182B0D3B001103D6 /* linkedin2.png */; };
 		9BAA542C18030A2E00785373 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542B18030A2E00785373 /* qr.png */; };
 		9BAA542E18030A8200785373 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BAA542D18030A8200785373 /* camera.png */; };
 		9BBD6A371814B48B00D3C907 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */; };
@@ -252,6 +258,12 @@
 		9BA6208F1815EC82003AE614 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9BA68F4F17F7342D0041482C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BA68F5717F73CA20041482C /* 4304932707_e07e0fe53c_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4304932707_e07e0fe53c_o.png; sourceTree = "<group>"; };
+		9BA9B83C182B06DF001103D6 /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin.png; sourceTree = "<group>"; };
+		9BA9B83D182B06DF001103D6 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		9BA9B840182B0879001103D6 /* facebookout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookout.png; sourceTree = "<group>"; };
+		9BA9B841182B0879001103D6 /* linkedinout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinout.png; sourceTree = "<group>"; };
+		9BA9B846182B0CFC001103D6 /* facebook2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook2.png; sourceTree = "<group>"; };
+		9BA9B848182B0D3B001103D6 /* linkedin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin2.png; sourceTree = "<group>"; };
 		9BAA542B18030A2E00785373 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
 		9BAA542D18030A8200785373 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9BBD6A361814B48B00D3C907 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -419,6 +431,12 @@
 		9B2B164517EE293900C8B943 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9BA9B846182B0CFC001103D6 /* facebook2.png */,
+				9BA9B848182B0D3B001103D6 /* linkedin2.png */,
+				9BA9B840182B0879001103D6 /* facebookout.png */,
+				9BA9B841182B0879001103D6 /* linkedinout.png */,
+				9BA9B83C182B06DF001103D6 /* linkedin.png */,
+				9BA9B83D182B06DF001103D6 /* facebook.png */,
 				9B682E0C18243712005F80ED /* logoConnect!.png */,
 				9BAA542B18030A2E00785373 /* qr.png */,
 				9BAA542D18030A8200785373 /* camera.png */,
@@ -672,6 +690,8 @@
 				9B0C4D2417F6874000BF3EDD /* qricon.jpeg in Resources */,
 				9BAA542E18030A8200785373 /* camera.png in Resources */,
 				9BA6207C1815DCB3003AE614 /* flashlight-turn-off-icon-pressed.png in Resources */,
+				9BA9B83F182B06DF001103D6 /* facebook.png in Resources */,
+				9BA9B843182B0879001103D6 /* linkedinout.png in Resources */,
 				9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */,
 				9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */,
 				9BA6207F1815DCB3003AE614 /* flashlight-turn-off-icon@2x.png in Resources */,
@@ -683,11 +703,15 @@
 				9BA50D921820A69C0079E9F5 /* 19-gear.png in Resources */,
 				9BA620811815DCB3003AE614 /* flashlight-turn-on-icon-pressed@2x.png in Resources */,
 				9BA6207A1815DCB3003AE614 /* scanditsdk.strings in Resources */,
+				9BA9B83E182B06DF001103D6 /* linkedin.png in Resources */,
 				9BA620861815DCB3003AE614 /* poweredby.png in Resources */,
+				9BA9B849182B0D3B001103D6 /* linkedin2.png in Resources */,
 				9BA50D941820A69C0079E9F5 /* 184-warning.png in Resources */,
 				9BA620791815DCB3003AE614 /* CHANGELOG.txt in Resources */,
 				9BA620741815DCB3003AE614 /* beep.wav in Resources */,
 				9BA620771815DCB3003AE614 /* camera-swap-icon.png in Resources */,
+				9BA9B842182B0879001103D6 /* facebookout.png in Resources */,
+				9BA9B847182B0CFC001103D6 /* facebook2.png in Resources */,
 				9BA620781815DCB3003AE614 /* camera-swap-icon@2x.png in Resources */,
 				9BA620831815DCB3003AE614 /* flashlight-turn-on-icon@2x.png in Resources */,
 				9BA620801815DCB3003AE614 /* flashlight-turn-on-icon-pressed.png in Resources */,

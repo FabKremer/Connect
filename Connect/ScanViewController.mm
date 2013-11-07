@@ -36,6 +36,7 @@
     
     [self.view addSubview:picker.view];
     [self.loadingView setHidden:YES];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -63,7 +64,32 @@
     [self.spinner startAnimating];
     [self.picker stopScanning];
     NSString *barcode = [barcodeResult objectForKey:@"barcode"];
-    [self performSelectorInBackground:@selector(processConnection:) withObject:barcode];
+    @try {
+        // Try something
+        
+        //trato de parsear el barcode y me quedo con el id del usuario
+        NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
+        NSArray *urlComponents = [barcode componentsSeparatedByString:@"?"];
+        if ([[urlComponents objectAtIndex:0] isEqualToString:@"pis2013.azurewebsites.net/"]){
+            NSArray *pairComponents = [[urlComponents objectAtIndex:1] componentsSeparatedByString:@"="];
+            NSString *key = [pairComponents objectAtIndex:0];
+            NSString *value = [pairComponents objectAtIndex:1];
+            
+            [queryStringDictionary setObject:value forKey:key];
+            
+            
+            [self performSelectorInBackground:@selector(processConnection:) withObject:[queryStringDictionary objectForKey:@"id"]];
+
+        }else{
+            [self performSelectorInBackground:@selector(processConnection:) withObject:@"error"];
+        }
+
+    }
+    @catch (NSException * e) {
+        //lei algo que no fuera de la forma pis2013.azurewebsites.net/?id=XXXXX
+        [self performSelectorInBackground:@selector(processConnection:) withObject:@"error"];
+    }
+
 
 }
 

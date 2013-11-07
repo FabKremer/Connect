@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Comparte-->
+        <!--Navigation Controller - Compartir-->
         <scene sceneID="Phe-US-3du">
             <objects>
                 <navigationController definesPresentationContext="YES" id="GrG-O2-5KY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comparte" image="qr.png" id="HNR-nm-Y01"/>
+                    <tabBarItem key="tabBarItem" title="Compartir" image="qr.png" id="HNR-nm-Y01"/>
                     <navigationItem key="navigationItem" id="Cir-RZ-yxH"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ah-hg-5Jm">
@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="1472" y="268"/>
         </scene>
-        <!--Share View Controller - Comparte-->
+        <!--Share View Controller - Compartir-->
         <scene sceneID="11">
             <objects>
                 <viewController id="2" customClass="ShareViewController" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comparte" image="qr.png" id="Ba8-l3-FTI"/>
-                    <navigationItem key="navigationItem" title="Comparte" id="Ljp-a1-9tu">
+                    <navigationItem key="navigationItem" title="Compartir" id="Ljp-a1-9tu">
                         <barButtonItem key="rightBarButtonItem" title="Salir" style="plain" id="SOg-ec-adc">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="2853" y="252"/>
         </scene>
-        <!--Scan View Controller - Escanea-->
+        <!--Scan View Controller - Escanear-->
         <scene sceneID="13">
             <objects>
                 <viewController id="3" customClass="ScanViewController" sceneMemberID="viewController">
@@ -119,8 +119,8 @@
                             </view>
                         </subviews>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Escanea" image="camera.png" id="oF0-JY-v4k"/>
-                    <navigationItem key="navigationItem" title="Escanea" id="BV0-Yb-JT8"/>
+                    <tabBarItem key="tabBarItem" title="Escanear" image="camera.png" id="oF0-JY-v4k"/>
+                    <navigationItem key="navigationItem" title="Escanear" id="BV0-Yb-JT8"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="loadingView" destination="8R1-z0-1sS" id="fts-Sg-rRY"/>
@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="2828" y="-622"/>
         </scene>
-        <!--Connect View Controller - Conecta-->
+        <!--Connect View Controller - Listo!-->
         <scene sceneID="ZaK-tL-hWb">
             <objects>
                 <viewController id="wjF-bH-kql" customClass="ConnectViewController" sceneMemberID="viewController">
@@ -140,23 +140,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Te acabas de conectar con:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0fv-0a-SVi">
-                                <rect key="frame" x="20" y="115" width="280" height="24"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Te acabas de conectar contertertertertertertretet:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0fv-0a-SVi">
+                                <rect key="frame" x="20" y="82" width="280" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yEW-mW-udC">
-                                <rect key="frame" x="0.0" y="156" width="320" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="0dL-ri-aEu">
-                                <rect key="frame" x="0.0" y="212" width="320" height="160"/>
+                                <rect key="frame" x="0.0" y="280" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -179,29 +172,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z1y-sU-Jnw">
-                                <rect key="frame" x="0.0" y="430" width="84" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6AK-C1-QfB">
-                                <rect key="frame" x="81" y="431" width="225" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Conecta" id="4dZ-El-9AS"/>
+                    <navigationItem key="navigationItem" title="Listo!" id="4dZ-El-9AS"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="mail" destination="6AK-C1-QfB" id="EGu-wQ-Qze"/>
-                        <outlet property="name" destination="yEW-mW-udC" id="ZIm-uX-qs4"/>
+                        <outlet property="connect" destination="0fv-0a-SVi" id="yMh-oS-azG"/>
                         <outlet property="table" destination="0dL-ri-aEu" id="RzV-MH-l2t"/>
                     </connections>
                 </viewController>
@@ -209,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="3404" y="-622"/>
         </scene>
-        <!--Navigation Controller - Escanea-->
+        <!--Navigation Controller - Escanear-->
         <scene sceneID="H7d-DJ-XGn">
             <objects>
                 <navigationController definesPresentationContext="YES" id="SI2-L6-21W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Escanea" image="camera.png" id="aYz-bd-gXT"/>
+                    <tabBarItem key="tabBarItem" title="Escanear" image="camera.png" id="aYz-bd-gXT"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m5g-Xe-M7s">
                         <autoresizingMask key="autoresizingMask"/>
@@ -527,8 +504,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q1C-ZG-GMR">
-                                        <rect key="frame" x="124" y="30" width="66" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrarse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q1C-ZG-GMR">
+                                        <rect key="frame" x="115" y="30" width="90" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -605,8 +582,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wGa-dx-0vw">
-                                        <rect key="frame" x="136" y="30" width="49" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis Cuentas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wGa-dx-0vw">
+                                        <rect key="frame" x="111" y="30" width="99" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -616,7 +593,7 @@
                                         <rect key="frame" x="10" y="24" width="71" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Cancelar">
+                                        <state key="normal" title="Atras">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -632,36 +609,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5R9-e8-11D">
-                                <rect key="frame" x="50" y="110" width="174" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="5R9-e8-11D">
+                                <rect key="frame" x="25" y="145" width="270" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Loguearse con Facebook">
+                                <state key="normal" image="facebook2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="fbClicked:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="nqk-P4-VkF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gjv-Oy-DJ6">
-                                <rect key="frame" x="55" y="189" width="164" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="gjv-Oy-DJ6">
+                                <rect key="frame" x="25" y="249" width="270" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Loguearse con Linkedin">
+                                <state key="normal" image="linkedin2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="button_TouchUp:" destination="D3Q-9g-YYk" eventType="touchUpInside" id="LO4-vk-dCf"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="117-todo.png" id="QCo-qY-B7o">
-                                <rect key="frame" x="242" y="112" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="117-todo.png" id="5WS-3f-638">
-                                <rect key="frame" x="242" y="191" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -669,8 +636,6 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnContinue" destination="X4S-yS-M9U" id="QsN-DJ-lwx"/>
-                        <outlet property="fbtick" destination="QCo-qY-B7o" id="Lgr-eN-3uk"/>
-                        <outlet property="litick" destination="5WS-3f-638" id="AP8-gx-PUx"/>
                         <outlet property="loginFb" destination="5R9-e8-11D" id="Gc9-x2-YHH"/>
                         <outlet property="loginLI" destination="gjv-Oy-DJ6" id="raQ-Au-ghg"/>
                         <outlet property="spinner" destination="PCk-pm-mNc" id="B9h-zY-aRU"/>
@@ -722,8 +687,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="117-todo.png" width="18" height="19"/>
         <image name="camera.png" width="34" height="26"/>
+        <image name="facebook2.png" width="315" height="56"/>
+        <image name="linkedin2.png" width="315" height="56"/>
         <image name="logoConnect!.png" width="250" height="80"/>
         <image name="qr.png" width="30" height="30"/>
     </resources>
@@ -733,8 +699,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qEk-MQ-pkt"/>
         <segue reference="xaI-Jm-D3G"/>
-        <segue reference="mJU-ep-tFy"/>
+        <segue reference="qEk-MQ-pkt"/>
+        <segue reference="h4q-y0-RhY"/>
     </inferredMetricsTieBreakers>
 </document>

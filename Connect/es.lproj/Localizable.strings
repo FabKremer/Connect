@@ -30,3 +30,4 @@
 "The QR may not be a Connect User" = "El QR leido no es de un usuario de Connect";
 "Connect via Linkedin"="Conectarse via Linkedin";
 "Connect via Facebook"="Conectarse via Facebook";
+"You have just connected with %@, with mail %@"="Te acabas de conectar con %@, con mail %@";

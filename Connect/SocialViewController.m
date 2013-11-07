@@ -54,6 +54,7 @@
                                                                                 NSDictionary<FBGraphUser> *my,
                                                                                 NSError *error) {
                                                   [self.loginFb setEnabled:NO];
+                                                  
                                                   NSLog(@"id %@", my.id);
                                                   self.facebookID = my.id;
                                                   
@@ -301,7 +302,7 @@
 
 -(IBAction)cancel:(id)sender{
     UINavigationController * navigationController = self.navigationController;
-    [navigationController popToRootViewControllerAnimated:YES];
+    [navigationController popViewControllerAnimated:YES];
     
 }
 

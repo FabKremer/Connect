@@ -14,7 +14,7 @@
 
 @implementation ConnectViewController
 
-@synthesize scanUser, table,name,mail;
+@synthesize scanUser, table,connect;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +32,7 @@
     self.table.delegate=self;
     self.table.dataSource=self;
     [self.table setAllowsSelection:YES];
-    self.name.text= [scanUser getName];
-    self.mail.text= [scanUser getMail];
+    self.connect.text=[NSString stringWithFormat:NSLocalizedString(@"You have just connected with %@, with mail %@", nil),[scanUser getName],[scanUser getMail]];
     
 }
 
