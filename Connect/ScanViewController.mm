@@ -70,7 +70,7 @@
         //trato de parsear el barcode y me quedo con el id del usuario
         NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
         NSArray *urlComponents = [barcode componentsSeparatedByString:@"?"];
-        if ([[urlComponents objectAtIndex:0] isEqualToString:@"pis2013.azurewebsites.net/"]){
+        if ([[urlComponents objectAtIndex:0] isEqualToString:@"http://pis2013.azurewebsites.net/"]){
             NSArray *pairComponents = [[urlComponents objectAtIndex:1] componentsSeparatedByString:@"="];
             NSString *key = [pairComponents objectAtIndex:0];
             NSString *value = [pairComponents objectAtIndex:1];

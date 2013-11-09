@@ -34,7 +34,7 @@
     //first encode the string into a matrix of bools, TRUE for black dot and FALSE for white. Let the encoder decide the error correction level and version
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *userid=[defaults stringForKey:@"id"];
-    NSString *barcode = [NSString stringWithFormat:@"pis2013.azurewebsites.net/?id=%@",userid];
+    NSString *barcode = [NSString stringWithFormat:@"http://pis2013.azurewebsites.net/?id=%@",userid];
     DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:barcode];
 
     //then render the matrix
