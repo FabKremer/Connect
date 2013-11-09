@@ -26,6 +26,7 @@
 		9B2B165517EE2C0600C8B943 /* fbicon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B165317EE2C0600C8B943 /* fbicon.jpeg */; };
 		9B2B165817EE2C4A00C8B943 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */; };
 		9B2B165C17EE3E2D00C8B943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */; };
+		9B5F5A33182C13DE00A8026B /* logoC!114 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F5A32182C13DE00A8026B /* logoC!114 (1).png */; };
 		9B682E0D18243712005F80ED /* logoConnect!.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B682E0C18243712005F80ED /* logoConnect!.png */; };
 		9BA1A0ED17EFB0B80071F73C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */; };
 		9BA1A16117EFCF2F0071F73C /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA1A15C17EFCEF30071F73C /* libqrencoder.a */; };
@@ -169,6 +170,7 @@
 		9B2B165617EE2C4A00C8B943 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		9B2B165717EE2C4A00C8B943 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9B2B165B17EE3E2D00C8B943 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9B5F5A32182C13DE00A8026B /* logoC!114 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoC!114 (1).png"; sourceTree = "<group>"; };
 		9B682E0C18243712005F80ED /* logoConnect!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoConnect!.png"; sourceTree = "<group>"; };
 		9BA1A0EB17EFB0B80071F73C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9BA1A0EC17EFB0B80071F73C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		9B2B164517EE293900C8B943 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9B5F5A32182C13DE00A8026B /* logoC!114 (1).png */,
 				9BA9B846182B0CFC001103D6 /* facebook2.png */,
 				9BA9B848182B0D3B001103D6 /* linkedin2.png */,
 				9BA9B840182B0879001103D6 /* facebookout.png */,
@@ -693,6 +696,7 @@
 				9BA9B83F182B06DF001103D6 /* facebook.png in Resources */,
 				9BA9B843182B0879001103D6 /* linkedinout.png in Resources */,
 				9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */,
+				9B5F5A33182C13DE00A8026B /* logoC!114 (1).png in Resources */,
 				9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */,
 				9BA6207F1815DCB3003AE614 /* flashlight-turn-off-icon@2x.png in Resources */,
 				9BA620851815DCB3003AE614 /* LICENSE-2.0.txt in Resources */,

@@ -32,7 +32,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+
     table.dataSource=self;
     
     txtName.tag=1;
@@ -40,6 +45,7 @@
     
     txtMail.tag=2;
     txtMail.delegate=self;
+    [txtMail setKeyboardType:UIKeyboardTypeEmailAddress];
     
     txtPassword.secureTextEntry = YES;
     txtPassword.tag=3;
@@ -57,6 +63,13 @@
 
     [wrongView setHidden:YES];
     [spinner setHidden:YES];
+}
+
+-(void)dismissKeyboard {
+    [txtMail resignFirstResponder];
+    [txtPassword resignFirstResponder];
+    [txtName resignFirstResponder];
+    [txtPassword2 resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -199,11 +212,21 @@
         else{
             [wrongView setHidden:NO];
             txtWrong.text=NSLocalizedString(@"Password too short", nil);
+            txtPassword.text=@"";
+            txtPassword2.text=@"";
+            password=nil;
+            password2=nil;
+
 
         }
     }else{
         [wrongView setHidden:NO];
         txtWrong.text=NSLocalizedString(@"Complete all the fields to register", nil);
+        txtPassword.text=@"";
+        txtPassword2.text=@"";
+        password=nil;
+        password2=nil;
+
 
     }
     

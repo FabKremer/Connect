@@ -32,7 +32,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+
     btnLogin.clipsToBounds = YES;
     btnLogin.layer.cornerRadius = 15.0f;
     table.dataSource=self;
@@ -41,9 +46,15 @@
     txtPassword.tag=2;
     txtMail.tag=1;
     txtMail.delegate=self;
+    [txtMail setKeyboardType:UIKeyboardTypeEmailAddress];
     btnWrong.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
     [wrongView setHidden:YES];
     [spinner setHidden:YES];
+}
+
+-(void)dismissKeyboard {
+    [txtMail resignFirstResponder];
+    [txtPassword resignFirstResponder];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
