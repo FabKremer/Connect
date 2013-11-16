@@ -181,16 +181,22 @@
 
 - (IBAction)button_TouchUp:(UIButton *)sender
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
-    oAuthLoginView = [storyboard instantiateViewControllerWithIdentifier:@"linkedinpage"];
-    
-    // register to be told when the login is finished
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loginViewDidFinish:)
-                                                 name:@"loginViewDidFinish"
-                                               object:oAuthLoginView];
-    
-    [self presentViewController:oAuthLoginView animated:YES completion:nil];
+    if ([BackendProxy internetConnection]){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+        oAuthLoginView = [storyboard instantiateViewControllerWithIdentifier:@"linkedinpage"];
+        
+        // register to be told when the login is finished
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(loginViewDidFinish:)
+                                                     name:@"loginViewDidFinish"
+                                                   object:oAuthLoginView];
+        
+        [self presentViewController:oAuthLoginView animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Connection Failed", nil) message:NSLocalizedString(@"No Internet Connection Linkedin", nil) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+
+    }
 }
 
 -(void) loginViewDidFinish:(NSNotification*)notification

@@ -31,3 +31,4 @@
 "Connect via Linkedin"="Connect via Linkedin";
 "Connect via Facebook"="Connect via Facebook";
 "You have just connected with %@, with mail %@"="You have just connected with %@, with mail %@";
+"No Internet Connection Linkedin" = "You must have internet in order to connect with Linkedin. Check your internet connection and try again";

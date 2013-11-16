@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B0C4D2417F6874000BF3EDD /* qricon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C4D2317F6874000BF3EDD /* qricon.jpeg */; };
 		9B0C4D2617F68DD000BF3EDD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0C4D2517F68DD000BF3EDD /* Security.framework */; };
+		9B0F446B1838195800BB8A3C /* ios-splash-connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F446A1838195800BB8A3C /* ios-splash-connect.png */; };
 		9B2B161717EE280D00C8B943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161617EE280D00C8B943 /* UIKit.framework */; };
 		9B2B161917EE280D00C8B943 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161817EE280D00C8B943 /* Foundation.framework */; };
 		9B2B161B17EE280D00C8B943 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B161A17EE280D00C8B943 /* CoreGraphics.framework */; };
@@ -145,6 +146,7 @@
 /* Begin PBXFileReference section */
 		9B0C4D2317F6874000BF3EDD /* qricon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qricon.jpeg; sourceTree = "<group>"; };
 		9B0C4D2517F68DD000BF3EDD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9B0F446A1838195800BB8A3C /* ios-splash-connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-splash-connect.png"; sourceTree = "<group>"; };
 		9B2B161317EE280D00C8B943 /* Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2B161617EE280D00C8B943 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9B2B161817EE280D00C8B943 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5F5A32182C13DE00A8026B /* logoC!114 (1).png */,
+				9B0F446A1838195800BB8A3C /* ios-splash-connect.png */,
 				9BA9B846182B0CFC001103D6 /* facebook2.png */,
 				9BA9B848182B0D3B001103D6 /* linkedin2.png */,
 				9BA9B840182B0879001103D6 /* facebookout.png */,
@@ -695,6 +698,7 @@
 				9BA6207C1815DCB3003AE614 /* flashlight-turn-off-icon-pressed.png in Resources */,
 				9BA9B83F182B06DF001103D6 /* facebook.png in Resources */,
 				9BA9B843182B0879001103D6 /* linkedinout.png in Resources */,
+				9B0F446B1838195800BB8A3C /* ios-splash-connect.png in Resources */,
 				9BA68F4E17F7342D0041482C /* Localizable.strings in Resources */,
 				9B5F5A33182C13DE00A8026B /* logoC!114 (1).png in Resources */,
 				9B2B162D17EE280D00C8B943 /* Default-568h@2x.png in Resources */,
