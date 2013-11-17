@@ -221,8 +221,8 @@
 //
 - (void)initLinkedInApi
 {
-    apikey = @"sq38ybw0wgs2";
-    secretkey = @"4W3xYJx1K2syARrJ";
+    apikey = @"75hx9owol1n86e";
+    secretkey = @"jjMhOknOf1Fl3lBB";
 
     self.consumer = [[OAConsumer alloc] initWithKey:apikey
                                         secret:secretkey
