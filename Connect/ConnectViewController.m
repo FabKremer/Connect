@@ -121,6 +121,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     if ([[scanUser getFacebook] isEqualToString:@""] && [[scanUser getLinkedin] isEqualToString:@""]){
         //tiene solo mail
 //        if (indexPath.row==0){//mail.
